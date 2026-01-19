@@ -1,0 +1,104 @@
+@use '../abstracts/variables' as v;
+
+/* ==========================================================================
+   MEGA MENU - VERSION FINALE STABLE (PLEIN ÉCRAN & RESPIRATION)
+   ========================================================================== */
+
+.mega-menu-content {
+    /* 1. POSITIONNEMENT FIXE POUR LE 100VH REEL */
+    position: fixed; 
+    top: v.$h-header; 
+    left: 0;
+    width: 100vw;
+    
+    /* 2. HAUTEUR ET SCROLL (Évite que le menu passe sous l'écran) */
+    height: calc(100vh - #{v.$h-header}); 
+    overflow-y: auto; 
+    overflow-x: hidden;
+    
+    /* 3. APPARENCE SOLIDE */
+    background-color: v.$color-bg-surface; 
+    border-bottom: 2px solid v.$color-accent;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
+    
+    /* 4. ÉTAT INITIAL (MASQUÉ) */
+    z-index: 1900; 
+    visibility: hidden;
+    opacity: 0;
+    
+    /* Transition uniquement sur l'opacité pour éviter les sauts */
+    transition: opacity 0.3s ease-in-out, visibility 0.3s;
+}
+
+/* DÉCLENCHEUR AU CLIC */
+.has-mega.is-active .mega-menu-content {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* 5. CONTENEUR DE LA GRILLE (PLEINE LARGEUR ET RESPIRATION) */
+.megamenu-grid {
+    display: grid !important;
+    // On utilise minmax pour que les colonnes ne s'écrasent pas à la réduction
+    grid-template-columns: repeat(3, minmax(240px, 1fr)); 
+    gap: 4rem;
+    width: 100%;
+    // On décolle des bords de l'écran (respiration)
+    padding: v.$space-xl 5%; 
+    margin: 0;
+}
+
+/* TYPOGRAPHIE DES COLONNES */
+.menu-col {
+    .col-title {
+        display: block;
+        font-size: 1.8rem;
+        color: v.$color-accent;
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-bottom: v.$space-m;
+        border-bottom: 1px solid v.$color-border;
+        padding-bottom: v.$space-xs;
+    }
+}
+
+.menu-section {
+    margin-bottom: v.$space-l;
+
+    h3 {
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-bottom: v.$space-s;
+        color: v.$color-text-main;
+        text-transform: uppercase;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            font-size: 1.3rem;
+            color: v.$color-text-muted;
+            padding: 0.6rem 0; // Un peu plus d'air entre les liens
+            transition: v.$transition-fast;
+            cursor: pointer;
+
+            &:hover {
+                color: v.$color-accent;
+                padding-left: 0.5rem;
+            }
+        }
+    }
+}
+
+/* FOOTER DU MENU */
+.menu-footer {
+    width: 100%;
+    padding: v.$space-xl 5%;
+    border-top: 1px solid v.$color-border;
+    text-align: center;
+    font-size: 1.2rem;
+    color: v.$color-text-muted;
+}

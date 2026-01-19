@@ -1,0 +1,124 @@
+@use '../abstracts/variables' as v;
+
+/* 1. HEADER BASE */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: v.$h-header; 
+    background-color: v.$color-bg-surface;
+    border-bottom: 1px solid v.$color-border;
+    z-index: 2000; 
+    display: flex;
+    align-items: center;
+
+    .header-flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 0 2rem;
+    }
+}
+
+/* 2. GROUPE LOGO + ACTIONS (Icônes à droite du nom) */
+.logo-group {
+    display: flex;
+    align-items: center;
+    gap: 2rem; // Espace entre le nom et les boutons actions
+    flex-shrink: 0;
+
+    .logo {
+        font-size: 2.2rem;
+        font-weight: 800;
+        color: v.$color-text-main;
+        text-decoration: none;
+        line-height: 1;
+    }
+}
+
+/* 3. ACTIONS DU HEADER (Boutons Thème & Handicap) */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem; // Espace entre les deux boutons ronds
+}
+
+.theme-btn, .action-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid v.$color-border;
+    background: transparent;
+    color: v.$color-text-main;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background-color: v.$color-bg-main;
+        border-color: v.$color-accent;
+    }
+
+    span {
+        font-size: 1.4rem;
+    }
+}
+
+// État actif spécifique pour le bouton handicapé
+.action-btn.is-active {
+    background-color: v.$color-accent;
+    color: white;
+}
+
+/* 4. NAVIGATION & BURGER */
+.nav-container {
+    margin-left: auto; 
+    display: flex;
+    align-items: center;
+
+    .nav-list {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li.has-mega {
+            position: static; 
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+.burger-btn {
+    width: 30px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+    z-index: 2001;
+
+    span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: v.$color-text-main;
+        transition: all 0.3s ease-in-out;
+    }
+
+    &.is-active {
+        span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+        span:nth-child(2) { opacity: 0; }
+        span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+    }
+}

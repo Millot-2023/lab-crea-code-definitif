@@ -1,0 +1,55 @@
+/* ==========================================================================
+   VARIABLES - LAB-CREA-CODE (Version Light-Base & Accessibility 2026)
+   ========================================================================== */
+
+// 1. UNITÉS & STRUCTURE (Le Rail Monk's)
+// --------------------------------------------------------------------------
+$base-font-size: 62.5%;    // 1rem = 10px
+$rail-width:     120rem;   // Rail de 1200px (stabilisé)
+$gutter-mobile:  2rem;     // Sécurité bord écran
+$h-header: 8rem; // 80px - La hauteur fixe de ton menu
+
+// 2. COLORS - MODE STANDARD (Fini le fond noir par défaut)
+// --------------------------------------------------------------------------
+$color-bg-main:      #F8F9FA;  // Fond clair standard
+$color-bg-surface:   #FFFFFF;  // Surfaces (cartes, etc.)
+$color-text-main:    #1A1A1A;  // Texte sombre pour lisibilité
+$color-text-muted:   #6C757D;
+$color-accent:       #007BFF;  // Ton bleu fétiche
+$color-border:       rgba(0, 0, 0, 0.1);
+
+// 3. COLORS - MODE ACCESSIBILITÉ (Switch Handicap)
+// --------------------------------------------------------------------------
+// Ces variables seront injectées via la classe .is-accessible sur le body
+$acc-bg:             #FFFFFF;
+$acc-text:           #000000;
+$acc-accent:         #BF4B00;  // Contraste élevé (Orange/Brun)
+$acc-font-size-mod:  1.2;      // Multiplicateur pour agrandir le texte
+
+// 4. BREAKPOINTS
+// --------------------------------------------------------------------------
+$bp-mobile:  480px;
+$bp-tablet:  768px;
+$bp-desktop: 1024px;
+$bp-wide:    1240px; 
+
+// 5. SPACING (Système REM)
+// --------------------------------------------------------------------------
+$space-xs: 0.5rem; 
+$space-s:  1.0rem; 
+$space-m:  2.0rem; 
+$space-l:  4.0rem; 
+$space-xl: 8.0rem;
+$gap-grid: 3.0rem; 
+
+// 6. TRANSITIONS
+// --------------------------------------------------------------------------
+$transition-fast: all 0.2s ease-in-out;
+$transition-main: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+// 7. Z-INDEX
+// --------------------------------------------------------------------------
+$z-index-header: 1000;
+$z-index-menu:   900;
+$z-index-sticky: 100;
+$z-index-modal:  2000;
