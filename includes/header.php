@@ -38,40 +38,93 @@
                         
                         <div class="menu-col">
                             <span class="col-title">Création</span>
+                            
                             <div class="menu-section">
                                 <h3>Identité Visuelle</h3>
                                 <ul>
                                     <li><a href="index.php?page=logos">Logos Vectoriels</a></li>
                                     <li><a href="index.php?page=charte">Chartes Graphiques</a></li>
+                                    <li><a href="index.php?page=brand">Brand Guidelines</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="menu-section">
+                                <h3>Arts Numériques</h3>
+                                <ul>
+                                    <li><a href="index.php?page=concepts">Illustrations Concept</a></li>
+                                    <li><a href="index.php?page=storyboards">Roughs & Storyboards</a></li>
+                                    <li><a href="index.php?page=digital-painting">Peinture Digitale</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="menu-section">
+                                <h3>Post-Production</h3>
+                                <ul>
+                                    <li><a href="index.php?page=retouche">Retouches Haute-Fréquence</a></li>
+                                    <li><a href="index.php?page=lut">Colorimétrie (Lut)</a></li>
+                                    <li><a href="index.php?page=compositing">Montage Photo (Compositing)</a></li>
                                 </ul>
                             </div>
                         </div>
 
                         <div class="menu-col">
                             <span class="col-title">Conception</span>
+                            
+                            <div class="menu-section">
+                                <h3>Analyse & UX</h3>
+                                <ul>
+                                    <li><a href="index.php?page=personas">Études Personas</a></li>
+                                    <li><a href="index.php?page=user-journey">Parcours Utilisateurs</a></li>
+                                    <li><a href="index.php?page=audit">Audits Ergonomiques</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="menu-section">
+                                <h3>Interface UI</h3>
+                                <ul>
+                                    <li><a href="index.php?page=hifi-maquettes">Maquettes Haute Fidélité</a></li>
+                                    <li><a href="index.php?page=prototypes">Prototypes Interactifs</a></li>
+                                    <li><a href="index.php?page=animations">Micro-animations</a></li>
+                                </ul>
+                            </div>
+
                             <div class="menu-section">
                                 <h3>Architecture</h3>
                                 <ul>
-                                    <li><a href="index.php?page=design-system">Design Systems</a></li>
+                                    <li><a href="index.php?page=figma-libs">Bibliothèques Figma</a></li>
+                                    <li><a href="index.php?page=design-systems">Design Systems Scalables</a></li>
+                                    <li><a href="index.php?page=doc-atome">Documentation Atome</a></li>
                                 </ul>
                             </div>
                         </div>
 
                         <div class="menu-col">
                             <span class="col-title">Ressources</span>
+                            
                             <div class="menu-section">
                                 <h3>Composants (CSS)</h3>
                                 <ul>
-                                    <li><a href="index.php?page=css">Cards & Gradients</a></li>
-                                    <li><a href="index.php?page=css">Boutons & Inputs</a></li>
-                                    <li><a href="index.php?page=css">Effets de Hover</a></li>
+                                    <li><a href="index.php?page=css">Cards & Glassmorphism</a></li>
+                                    <li><a href="index.php?page=buttons">Boutons & Inputs</a></li>
+                                    <li><a href="index.php?page=hover">Effets de Hover (Survol)</a></li>
                                 </ul>
                             </div>
+
                             <div class="menu-section">
                                 <h3>Mise en Page</h3>
                                 <ul>
-                                    <li><a href="index.php?page=layout">Grilles CSS Grid</a></li>
-                                    <li><a href="index.php?page=layout">Flexbox Containers</a></li>
+                                    <li><a href="index.php?page=layout-grid">Grilles CSS Grid</a></li>
+                                    <li><a href="index.php?page=layout-flex">Flexbox Containers</a></li>
+                                    <li><a href="index.php?page=responsive">Layouts Responsive</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="menu-section">
+                                <h3>Standards Web</h3>
+                                <ul>
+                                    <li><a href="index.php?page=typo">Typographie (REM)</a></li>
+                                    <li><a href="index.php?page=w3c">Règles Accessibilité W3C</a></li>
+                                    <li><a href="index.php?page=seo">Optimisation SEO/Code</a></li>
                                 </ul>
                             </div>
                         </div>
