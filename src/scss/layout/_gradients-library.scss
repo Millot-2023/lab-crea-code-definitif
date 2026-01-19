@@ -12,12 +12,10 @@
         grid-template-columns: 1fr;
         width: 100%;
 
-        // Tablettes
         @media (min-width: 600px) {
             grid-template-columns: repeat(2, 1fr);
         }
 
-        // Desktop (4 colonnes comme demandé)
         @media (min-width: 1200px) {
             grid-template-columns: repeat(4, 1fr);
         }
@@ -26,13 +24,13 @@
 
 // 2. LA CARTE
 .grid-item {
-    min-width: 0; // Empêche le contenu interne (SVG) de forcer la largeur
+    min-width: 0;
 }
 
 .card-gradient {
     background: #fff;
     border-radius: 12px;
-    overflow: hidden;
+    overflow: hidden; 
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     border: 1px solid #eee;
     display: flex;
@@ -40,31 +38,33 @@
     height: 100%;
     width: 100%;
     cursor: pointer;
-    transition: transform 0.2s ease;
+    transition: all 0.3s ease;
 
     &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        transform: translateY(-8px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
     }
 
     .gradient-preview-container {
         position: relative;
-        overflow: hidden;
+        overflow: hidden; 
         height: 200px;
-        border-bottom: 1px solid #eee;
-        background: #fdfdfd; // Fond neutre sous les SVG
+        background: #fdfdfd;
+        border-bottom: none;
     }
 
     .gradient-preview {
-        height: 100%;
-        width: 100%;
-        display: block;
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
 
-        // Sécurité pour les filtres SVG complexes
         svg {
             display: block;
             width: 100%;
             height: 100%;
+            object-fit: cover;
+            overflow: hidden;
+            position: absolute;
+            top: 0; left: 0;
         }
     }
 }
@@ -75,47 +75,94 @@
     text-align: center;
     display: flex;
     flex-direction: column;
-    flex-grow: 1; // Aligne les boutons sur une même ligne en bas
+    flex-grow: 1;
     
     h3 {
-        font-size: 1.1rem;
-        margin-bottom: 15px;
+        font-size: 1.05rem;
+        margin-bottom: 20px;
         color: #333;
         font-weight: 600;
-        min-height: 2.4em; // Réserve l'espace pour 2 lignes de texte max
+        min-height: 2.4em;
         display: flex;
         align-items: center;
         justify-content: center;
     }
 }
 
-// 4. LE BOUTON
+// 4. LE BOUTON "REAL FROSTED GLASS" (Anthracite Premium)
 .btn-copy {
-    margin-top: auto; // Pousse le bouton vers le bas
+    margin-top: auto;
     display: inline-block;
     cursor: pointer;
     border-radius: 10px;
-    padding: 10px 20px;
+    padding: 12px 20px;
     border: 1px solid #ddd;
     background: #f8f9fa;
+    color: #444;
     font-family: inherit;
-    font-weight: 500;
-    transition: all 0.2s ease;
+    font-weight: 600;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
     width: 100%;
+    position: relative;
+    overflow: hidden; // Nécessaire pour le reflet interne (shimmer)
 
     i {
         margin-right: 8px;
     }
 
+    // EFFET DE VERRE AU SURVOL DIRECT
     &:hover {
-        background-color: #2a5298;
-        color: #ffffff;
-        border-color: #2a5298;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        // 1. Fond Anthracite Translucide
+        background: rgba(35, 35, 35, 0.75) !important;
+        
+        // 2. Flou Dépoli et Saturation
+        backdrop-filter: blur(15px) saturate(160%);
+        -webkit-backdrop-filter: blur(15px) saturate(160%);
+        
+        // 3. Bordure Biseautée (Simule l'épaisseur du verre)
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.45) !important; // Éclat sur l'arête
+        
+        color: #ffffff !important;
+        
+        // 4. Ombre portée profonde
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        transform: translateY(-2px);
+
+        // Déclenchement du reflet de lumière (Shimmer)
+        &::after {
+            left: 100%;
+        }
+    }
+
+    // Le reflet de lumière qui traverse le verre
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.15),
+            transparent
+        );
+        transition: 0.6s;
     }
 
     &:active {
-        background-color: #e67e22;
-        transform: translateY(1px);
+        transform: translateY(0) scale(0.98);
+    }
+
+    // État Copié (Success)
+    &.is-copied {
+        background: #27ae60 !important;
+        color: #ffffff !important;
+        border-color: #27ae60 !important;
+        backdrop-filter: none;
+        box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
+        transform: translateY(0) scale(1);
     }
 }
