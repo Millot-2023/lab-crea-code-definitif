@@ -1,0 +1,32 @@
+@use '../abstracts/variables' as v;
+
+.hero-fs {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #000;
+
+    .hero-bg-img {
+        // Déjà géré en inline, mais on sécurise ici
+        object-fit: cover;
+    }
+
+    .hero-chevron {
+        // Animation de rebond
+        animation: hero-bounce 2s infinite;
+        
+        svg {
+            // On s'assure que le trait est bien épais et blanc
+            stroke: #ffffff !important;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+        }
+    }
+}
+
+@keyframes hero-bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+    40% { transform: translateX(-50%) translateY(15px); }
+    60% { transform: translateX(-50%) translateY(7px); }
+}

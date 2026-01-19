@@ -121,9 +121,9 @@
                         </div>
 
                     </div>
-                    <div class="menu-footer">
-                        Informations : contact[at]votre-domaine.com — Profil Professionnel
-                    </div>
+            <!-- <div class="menu-footer">
+                Informations : contact[at]votre-domaine.com — Profil Professionnel
+            </div> -->
                 </div>
             </div>
         </nav>

@@ -53,3 +53,10 @@ $z-index-header: 1000;
 $z-index-menu:   900;
 $z-index-sticky: 100;
 $z-index-modal:  2000;
+
+// 8. BORDERS & RADIUS
+// --------------------------------------------------------------------------
+$border-radius-s: 0.4rem;
+$border-radius-m: 0.8rem;
+$border-radius-l: 1.2rem; // La variable qui manquait
+$border-width:    1px;

@@ -5,7 +5,8 @@
 /* RESET GLOBAL
    ========================================================================== */
 *, *::before, *::after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -58,23 +59,38 @@ button {
   background-color: #FFFFFF;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   z-index: 2000;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .main-header .header-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
   padding: 0 2rem;
 }
 
 /* 2. GROUPE LOGO + ACTIONS (Icônes à droite du nom) */
 .logo-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 2rem;
-  flex-shrink: 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 .logo-group .logo {
   font-size: 2.2rem;
@@ -86,8 +102,12 @@ button {
 
 /* 3. ACTIONS DU HEADER (Boutons Thème & Handicap) */
 .header-actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 1rem;
 }
 
@@ -99,10 +119,18 @@ button {
   background: transparent;
   color: #1A1A1A;
   cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
 .theme-btn:hover, .action-btn:hover {
@@ -121,10 +149,16 @@ button {
 /* 4. NAVIGATION & BURGER */
 .nav-container {
   margin-left: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .nav-container .nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   list-style: none;
   margin: 0;
@@ -132,16 +166,27 @@ button {
 }
 .nav-container .nav-list li.has-mega {
   position: static;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .burger-btn {
   width: 30px;
   height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   background: transparent;
   border: none;
   padding: 0;
@@ -154,60 +199,74 @@ button {
   width: 100%;
   height: 2px;
   background-color: #1A1A1A;
+  -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 .burger-btn.is-active span:nth-child(1) {
-  transform: translateY(9px) rotate(45deg);
+  -webkit-transform: translateY(9px) rotate(45deg);
+          transform: translateY(9px) rotate(45deg);
 }
 .burger-btn.is-active span:nth-child(2) {
   opacity: 0;
 }
 .burger-btn.is-active span:nth-child(3) {
-  transform: translateY(-9px) rotate(-45deg);
+  -webkit-transform: translateY(-9px) rotate(-45deg);
+          transform: translateY(-9px) rotate(-45deg);
 }
 
 /* ==========================================================================
-   MEGA MENU - VERSION FINALE STABLE (PLEIN ÉCRAN & RESPIRATION)
+   MEGA MENU - CENTRAGE DYNAMIQUE
    ========================================================================== */
 .mega-menu-content {
-  /* 1. POSITIONNEMENT FIXE POUR LE 100VH REEL */
+  /* 1. POSITIONNEMENT */
   position: fixed;
   top: 8rem;
   left: 0;
   width: 100vw;
-  /* 2. HAUTEUR ET SCROLL (Évite que le menu passe sous l'écran) */
   height: calc(100vh - 8rem);
-  overflow-y: auto;
-  overflow-x: hidden;
-  /* 3. APPARENCE SOLIDE */
+  /* 2. LE MOTEUR DE CENTRAGE */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* 3. APPARENCE */
   background-color: #FFFFFF;
   border-bottom: 2px solid #007BFF;
-  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
-  /* 4. ÉTAT INITIAL (MASQUÉ) */
+  -webkit-box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  overflow-x: hidden;
+  /* 4. ÉTAT INITIAL */
   z-index: 1900;
   visibility: hidden;
   opacity: 0;
-  /* Transition uniquement sur l'opacité pour éviter les sauts */
+  -webkit-transition: opacity 0.3s ease-in-out, visibility 0.3s;
   transition: opacity 0.3s ease-in-out, visibility 0.3s;
 }
 
-/* DÉCLENCHEUR AU CLIC */
+/* DÉCLENCHEUR */
 .has-mega.is-active .mega-menu-content {
   visibility: visible;
   opacity: 1;
 }
 
-/* 5. CONTENEUR DE LA GRILLE (PLEINE LARGEUR ET RESPIRATION) */
+/* 5. LA GRILLE (Désormais centrée par le parent flex) */
 .megamenu-grid {
   display: grid !important;
   grid-template-columns: repeat(3, minmax(240px, 1fr));
   gap: 4rem;
   width: 100%;
-  padding: 8rem 5%;
-  margin: 0;
+  max-width: 1400px;
+  padding: 8rem 2rem;
 }
 
-/* TYPOGRAPHIE DES COLONNES */
+/* TYPOGRAPHIE ET SECTIONS */
 .menu-col .col-title {
   display: block;
   font-size: 1.8rem;
@@ -232,12 +291,12 @@ button {
 .menu-section ul {
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 .menu-section ul li {
   font-size: 1.3rem;
   color: #6C757D;
   padding: 0.6rem 0;
+  -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
 }
@@ -249,11 +308,64 @@ button {
 /* FOOTER DU MENU */
 .menu-footer {
   width: 100%;
-  padding: 8rem 5%;
+  max-width: 1400px;
+  padding: 8rem 2rem;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   text-align: center;
   font-size: 1.2rem;
   color: #6C757D;
+  margin-top: auto;
 }
 
-/*# sourceMappingURL=styles.css.map */
+.hero-fs {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: #000;
+}
+.hero-fs .hero-bg-img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.hero-fs .hero-chevron {
+  -webkit-animation: hero-bounce 2s infinite;
+          animation: hero-bounce 2s infinite;
+}
+.hero-fs .hero-chevron svg {
+  stroke: #ffffff !important;
+  -webkit-filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+          filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+@-webkit-keyframes hero-bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateX(-50%) translateY(0);
+            transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    -webkit-transform: translateX(-50%) translateY(15px);
+            transform: translateX(-50%) translateY(15px);
+  }
+  60% {
+    -webkit-transform: translateX(-50%) translateY(7px);
+            transform: translateX(-50%) translateY(7px);
+  }
+}
+
+@keyframes hero-bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateX(-50%) translateY(0);
+            transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    -webkit-transform: translateX(-50%) translateY(15px);
+            transform: translateX(-50%) translateY(15px);
+  }
+  60% {
+    -webkit-transform: translateX(-50%) translateY(7px);
+            transform: translateX(-50%) translateY(7px);
+  }
+}/*# sourceMappingURL=styles.css.map */

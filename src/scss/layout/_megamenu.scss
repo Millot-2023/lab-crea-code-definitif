@@ -1,54 +1,54 @@
 @use '../abstracts/variables' as v;
 
 /* ==========================================================================
-   MEGA MENU - VERSION FINALE STABLE (PLEIN ÉCRAN & RESPIRATION)
+   MEGA MENU - CENTRAGE DYNAMIQUE
    ========================================================================== */
 
 .mega-menu-content {
-    /* 1. POSITIONNEMENT FIXE POUR LE 100VH REEL */
+    /* 1. POSITIONNEMENT */
     position: fixed; 
     top: v.$h-header; 
     left: 0;
     width: 100vw;
-    
-    /* 2. HAUTEUR ET SCROLL (Évite que le menu passe sous l'écran) */
     height: calc(100vh - #{v.$h-header}); 
-    overflow-y: auto; 
-    overflow-x: hidden;
     
-    /* 3. APPARENCE SOLIDE */
+    /* 2. LE MOTEUR DE CENTRAGE */
+    display: flex;          // On transforme le menu en conteneur Flex
+    flex-direction: column; // On aligne la grille et le footer verticalement
+    align-items: center;    // CENTRE TOUT HORIZONTALEMENT (La grille et le footer)
+    
+    /* 3. APPARENCE */
     background-color: v.$color-bg-surface; 
     border-bottom: 2px solid v.$color-accent;
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
+    overflow-y: auto; 
+    overflow-x: hidden;
     
-    /* 4. ÉTAT INITIAL (MASQUÉ) */
+    /* 4. ÉTAT INITIAL */
     z-index: 1900; 
     visibility: hidden;
     opacity: 0;
-    
-    /* Transition uniquement sur l'opacité pour éviter les sauts */
     transition: opacity 0.3s ease-in-out, visibility 0.3s;
 }
 
-/* DÉCLENCHEUR AU CLIC */
+/* DÉCLENCHEUR */
 .has-mega.is-active .mega-menu-content {
     visibility: visible;
     opacity: 1;
 }
 
-/* 5. CONTENEUR DE LA GRILLE (PLEINE LARGEUR ET RESPIRATION) */
+/* 5. LA GRILLE (Désormais centrée par le parent flex) */
 .megamenu-grid {
     display: grid !important;
-    // On utilise minmax pour que les colonnes ne s'écrasent pas à la réduction
     grid-template-columns: repeat(3, minmax(240px, 1fr)); 
     gap: 4rem;
-    width: 100%;
-    // On décolle des bords de l'écran (respiration)
-    padding: v.$space-xl 5%; 
-    margin: 0;
+    
+    width: 100%;           // Elle essaie de prendre toute la place...
+    max-width: 1400px;     // ...mais s'arrête ici.
+    padding: v.$space-xl 2rem; 
 }
 
-/* TYPOGRAPHIE DES COLONNES */
+/* TYPOGRAPHIE ET SECTIONS */
 .menu-col {
     .col-title {
         display: block;
@@ -64,7 +64,6 @@
 
 .menu-section {
     margin-bottom: v.$space-l;
-
     h3 {
         font-size: 1.4rem;
         font-weight: 700;
@@ -72,19 +71,15 @@
         color: v.$color-text-main;
         text-transform: uppercase;
     }
-
     ul {
         list-style: none;
         padding: 0;
-        margin: 0;
-
         li {
             font-size: 1.3rem;
             color: v.$color-text-muted;
-            padding: 0.6rem 0; // Un peu plus d'air entre les liens
+            padding: 0.6rem 0; 
             transition: v.$transition-fast;
             cursor: pointer;
-
             &:hover {
                 color: v.$color-accent;
                 padding-left: 0.5rem;
@@ -96,9 +91,11 @@
 /* FOOTER DU MENU */
 .menu-footer {
     width: 100%;
-    padding: v.$space-xl 5%;
+    max-width: 1400px;
+    padding: v.$space-xl 2rem;
     border-top: 1px solid v.$color-border;
     text-align: center;
     font-size: 1.2rem;
     color: v.$color-text-muted;
+    margin-top: auto; // Pousse le footer vers le bas si le contenu est court
 }
