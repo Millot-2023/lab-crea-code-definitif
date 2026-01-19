@@ -1,0 +1,121 @@
+@use "../abstracts/variables" as vars;
+
+// 1. LA SECTION & LA GRILLE
+.section-projects {
+    padding: 60px 0;
+    width: 100%;
+
+    .flex-grid {
+        display: grid;
+        gap: 30px;
+        margin-top: 40px;
+        grid-template-columns: 1fr;
+        width: 100%;
+
+        // Tablettes
+        @media (min-width: 600px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        // Desktop (4 colonnes comme demandé)
+        @media (min-width: 1200px) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+}
+
+// 2. LA CARTE
+.grid-item {
+    min-width: 0; // Empêche le contenu interne (SVG) de forcer la largeur
+}
+
+.card-gradient {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .gradient-preview-container {
+        position: relative;
+        overflow: hidden;
+        height: 200px;
+        border-bottom: 1px solid #eee;
+        background: #fdfdfd; // Fond neutre sous les SVG
+    }
+
+    .gradient-preview {
+        height: 100%;
+        width: 100%;
+        display: block;
+
+        // Sécurité pour les filtres SVG complexes
+        svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+// 3. LES INFOS
+.gradient-info {
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; // Aligne les boutons sur une même ligne en bas
+    
+    h3 {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+        color: #333;
+        font-weight: 600;
+        min-height: 2.4em; // Réserve l'espace pour 2 lignes de texte max
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+// 4. LE BOUTON
+.btn-copy {
+    margin-top: auto; // Pousse le bouton vers le bas
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    background: #f8f9fa;
+    font-family: inherit;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    width: 100%;
+
+    i {
+        margin-right: 8px;
+    }
+
+    &:hover {
+        background-color: #2a5298;
+        color: #ffffff;
+        border-color: #2a5298;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    &:active {
+        background-color: #e67e22;
+        transform: translateY(1px);
+    }
+}

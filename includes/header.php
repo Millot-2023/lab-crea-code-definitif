@@ -41,25 +41,8 @@
                             <div class="menu-section">
                                 <h3>Identité Visuelle</h3>
                                 <ul>
-                                    <li>Logos Vectoriels</li>
-                                    <li>Chartes Graphiques</li>
-                                    <li>Brand Guidelines</li>
-                                </ul>
-                            </div>
-                            <div class="menu-section">
-                                <h3>Arts Numériques</h3>
-                                <ul>
-                                    <li>Illustrations Concept</li>
-                                    <li>Roughs & Storyboards</li>
-                                    <li>Peinture Digitale</li>
-                                </ul>
-                            </div>
-                            <div class="menu-section">
-                                <h3>Post-Production</h3>
-                                <ul>
-                                    <li>Retouches Haute-Fréquence</li>
-                                    <li>Colorimétrie (Lut)</li>
-                                    <li>Montage Photo (Compositing)</li>
+                                    <li><a href="index.php?page=logos">Logos Vectoriels</a></li>
+                                    <li><a href="index.php?page=charte">Chartes Graphiques</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -67,27 +50,9 @@
                         <div class="menu-col">
                             <span class="col-title">Conception</span>
                             <div class="menu-section">
-                                <h3>Analyse & UX</h3>
-                                <ul>
-                                    <li>Études Personas</li>
-                                    <li>Parcours Utilisateurs</li>
-                                    <li>Audits Ergonomiques</li>
-                                </ul>
-                            </div>
-                            <div class="menu-section">
-                                <h3>Interface UI</h3>
-                                <ul>
-                                    <li>Maquettes Haute Fidélité</li>
-                                    <li>Prototypes Interactifs</li>
-                                    <li>Micro-animations</li>
-                                </ul>
-                            </div>
-                            <div class="menu-section">
                                 <h3>Architecture</h3>
                                 <ul>
-                                    <li>Bibliothèques Figma</li>
-                                    <li>Design Systems Scalables</li>
-                                    <li>Documentation Atome</li>
+                                    <li><a href="index.php?page=design-system">Design Systems</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -97,36 +62,23 @@
                             <div class="menu-section">
                                 <h3>Composants (CSS)</h3>
                                 <ul>
-                                    <li>Cards & Glassmorphism</li>
-                                    <li>Boutons & Inputs</li>
-                                    <li>Effets de Hover (Survol)</li>
+                                    <li><a href="index.php?page=css">Cards & Gradients</a></li>
+                                    <li><a href="index.php?page=css">Boutons & Inputs</a></li>
+                                    <li><a href="index.php?page=css">Effets de Hover</a></li>
                                 </ul>
                             </div>
                             <div class="menu-section">
                                 <h3>Mise en Page</h3>
                                 <ul>
-                                    <li>Grilles CSS Grid</li>
-                                    <li>Flexbox Containers</li>
-                                    <li>Layouts Responsive</li>
-                                </ul>
-                            </div>
-                            <div class="menu-section">
-                                <h3>Standards Web</h3>
-                                <ul>
-                                    <li>Typographie (REM)</li>
-                                    <li>Règles Accessibilité W3C</li>
-                                    <li>Optimisation SEO/Code</li>
+                                    <li><a href="index.php?page=layout">Grilles CSS Grid</a></li>
+                                    <li><a href="index.php?page=layout">Flexbox Containers</a></li>
                                 </ul>
                             </div>
                         </div>
 
                     </div>
-            <!-- <div class="menu-footer">
-                Informations : contact[at]votre-domaine.com — Profil Professionnel
-            </div> -->
                 </div>
             </div>
         </nav>
-
     </div>
 </header>

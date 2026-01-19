@@ -1,3 +1,17 @@
+<?php 
+    // Logique de routage et de titres
+    $page = isset($_GET['page']) ? $_GET['page'] : 'home';
+    $file = 'includes/main-' . $page . '.php';
+
+    // Titres dynamiques pour le Hero
+    $titreHero = "Bienvenue dans le Lab";
+    $sousTitreHero = "Le rail de 1200px est désormais le seul garant de la structure centrale.";
+
+    if ($page === 'css') {
+        $titreHero = "Laboratoire CSS";
+        $sousTitreHero = "Composants dynamiques & Gradients CSS3";
+    }
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -20,8 +34,8 @@
     <div class="hero-overlay" style="position: relative; z-index: 2; height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.3);">
         <div class="hero-container">
             <div class="hero-content" style="text-align: center; color: white;">
-                <h1 style="font-size: clamp(3.5rem, 8vw, 6rem); margin: 0;">Bienvenue dans le Lab</h1>
-                <p style="font-size: 1.5rem; opacity: 0.9;">Le rail de 1200px est désormais le seul garant de la structure centrale.</p>
+                <h1 style="font-size: clamp(3.5rem, 8vw, 6rem); margin: 0;"><?php echo $titreHero; ?></h1>
+                <p style="font-size: 1.5rem; opacity: 0.9;"><?php echo $sousTitreHero; ?></p>
             </div>
         </div>
     </div>
@@ -35,29 +49,13 @@
 </section>
 
     <div id="projets" class="container">
-        <section class="section-projects">
-            <div class="flex-grid">
-                <article class="card"><h3>Projet A</h3><p>...</p></article>
-                <article class="card"><h3>Projet B</h3><p>...</p></article>
-                <article class="card"><h3>Projet C</h3><p>...</p></article>
-
-                <article class="card"><h3>Projet A</h3><p>...</p></article>
-                <article class="card"><h3>Projet B</h3><p>...</p></article>
-                <article class="card"><h3>Projet C</h3><p>...</p></article>
-
-                <article class="card"><h3>Projet A</h3><p>...</p></article>
-                <article class="card"><h3>Projet B</h3><p>...</p></article>
-                <article class="card"><h3>Projet C</h3><p>...</p></article>
- 
-                <article class="card"><h3>Projet A</h3><p>...</p></article>
-                <article class="card"><h3>Projet B</h3><p>...</p></article>
-                <article class="card"><h3>Projet C</h3><p>...</p></article>
-
-                <article class="card"><h3>Projet A</h3><p>...</p></article>
-                <article class="card"><h3>Projet B</h3><p>...</p></article>
-                <article class="card"><h3>Projet C</h3><p>...</p></article>
-            </div>
-        </section>
+        <?php 
+            if (file_exists($file)) {
+                include $file;
+            } else {
+                echo "<section class='section-projects'><h1>Erreur 404</h1><p>Le fichier <strong>$file</strong> est introuvable.</p></section>";
+            }
+        ?>
     </div>
 </main>
 
@@ -95,6 +93,6 @@
         }
     });
 </script>
-
+<script src="src/js/main.js"></script>
 </body>
 </html>

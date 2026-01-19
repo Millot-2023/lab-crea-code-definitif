@@ -9,9 +9,11 @@
 @use 'layout/header';
 @use 'layout/megamenu';
 @use 'layout/hero';
+@use 'layout/gradients-library';
 @use 'layout/footer';
 
 // 4. COMPONENTS (Éléments)
 @use 'components/buttons';
 @use 'components/cards';
+@use 'components/css-lab';
 @use 'components/contact-info';
