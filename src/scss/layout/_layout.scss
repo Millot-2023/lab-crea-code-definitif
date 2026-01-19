@@ -1,0 +1,54 @@
+@use '../abstracts/variables' as v;
+
+/* ==========================================================================
+   RAIL DE STRUCTURE (1200px)
+   Ciblage renforcé par le parent pour écraser les conflits "max-width: none"
+   ========================================================================== */
+
+main {
+    .container {
+        display: block;
+        width: 100%;
+        max-width: v.$rail-width; // Utilise tes 120rem (1200px)
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: v.$gutter-mobile;
+        padding-right: v.$gutter-mobile;
+        box-sizing: border-box;
+    }
+}
+
+/* GRILLE DE PROJETS
+   ========================================================================== */
+
+.section-projects {
+    padding: v.$space-xl 0;
+
+    .flex-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: v.$space-m;
+        margin-top: v.$space-l;
+        
+        .card {
+            // Calcul précis pour 3 colonnes en respectant le gap
+            flex: 1 1 calc(33.333% - v.$space-m);
+            min-width: 280px; 
+            background: v.$color-bg-surface;
+            padding: v.$space-m;
+            border-radius: v.$border-radius-m;
+            border: 1px solid v.$color-border;
+            transition: v.$transition-main;
+
+            &:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            }
+
+            h3 {
+                margin-bottom: v.$space-s;
+                color: v.$color-text-main;
+            }
+        }
+    }
+}
