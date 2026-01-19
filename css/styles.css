@@ -102,137 +102,70 @@ main .container {
   color: #1A1A1A;
 }
 
-/* 1. HEADER BASE */
+/* ==========================================================================
+   HEADER ALPHA - VERSION BURGER UNIVERSEL (FORCE MAXIMALE)
+   ========================================================================== */
 .main-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 8rem;
-  background-color: #FFFFFF;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 8rem !important;
+  background-color: #FFFFFF !important;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  z-index: 2000;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.main-header .header-flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
-  padding: 0 2rem;
+  z-index: 9000;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: center !important;
+      -ms-flex-align: center !important;
+          align-items: center !important;
 }
 
-/* 2. GROUPE LOGO + ACTIONS (Icônes à droite du nom) */
+.header-flex {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-pack: justify !important;
+      -ms-flex-pack: justify !important;
+          justify-content: space-between !important;
+  -webkit-box-align: center !important;
+      -ms-flex-align: center !important;
+          align-items: center !important;
+  width: 100% !important;
+  padding: 0 2rem !important;
+  position: relative;
+  z-index: 10000;
+}
+
+/* 2. LOGO & ACTIONS */
 .logo-group {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: center !important;
+      -ms-flex-align: center !important;
+          align-items: center !important;
   gap: 2rem;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
+  z-index: 10001;
 }
 .logo-group .logo {
   font-size: 2.2rem;
   font-weight: 800;
   color: #1A1A1A;
   text-decoration: none;
-  line-height: 1;
 }
 
-/* 3. ACTIONS DU HEADER (Boutons Thème & Handicap) */
-.header-actions {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 1rem;
-}
-
-.theme-btn, .action-btn {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  background: transparent;
-  color: #1A1A1A;
-  cursor: pointer;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
-  -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-}
-.theme-btn:hover, .action-btn:hover {
-  background-color: #F8F9FA;
-  border-color: #007BFF;
-}
-.theme-btn span, .action-btn span {
-  font-size: 1.4rem;
-}
-
-.action-btn.is-active {
-  background-color: #007BFF;
-  color: white;
-}
-
-/* 4. NAVIGATION & BURGER */
-.nav-container {
-  margin-left: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.nav-container .nav-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.nav-container .nav-list li.has-mega {
-  position: static;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
+/* 3. LE BOUTON BURGER (FORCE ALPHA) */
+/* On utilise !important pour écraser toute règle display:none cachée ailleurs */
 .burger-btn {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
   width: 30px;
   height: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -242,45 +175,67 @@ main .container {
           justify-content: space-between;
   background: transparent;
   border: none;
-  padding: 0;
   cursor: pointer;
-  position: relative;
-  z-index: 2001;
+  /* Doit être au sommet pour rester cliquable au-dessus du menu */
+  z-index: 1000001 !important;
+  /* Animation de la croix lors de l'activation */
 }
-.burger-btn span {
-  display: block;
+.burger-btn .burger-line {
+  display: block !important;
   width: 100%;
   height: 2px;
   background-color: #1A1A1A;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
-.burger-btn.is-active span:nth-child(1) {
+.burger-btn.is-active .burger-line:nth-child(1) {
   -webkit-transform: translateY(9px) rotate(45deg);
           transform: translateY(9px) rotate(45deg);
 }
-.burger-btn.is-active span:nth-child(2) {
+.burger-btn.is-active .burger-line:nth-child(2) {
   opacity: 0;
 }
-.burger-btn.is-active span:nth-child(3) {
+.burger-btn.is-active .burger-line:nth-child(3) {
   -webkit-transform: translateY(-9px) rotate(-45deg);
           transform: translateY(-9px) rotate(-45deg);
 }
 
+.header-actions {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: center !important;
+      -ms-flex-align: center !important;
+          align-items: center !important;
+  gap: 1rem;
+  z-index: 10001;
+}
+
+/* 4. NETTOYAGE */
+/* Rappel : Le menu lui-même est géré dans layout/_megamenu.scss */
 /* ==========================================================================
-   MEGA MENU - CENTRAGE DYNAMIQUE
+   MEGA MENU ALPHA - VERSION FINALE (STABILISÉE & NETTOYÉE)
    ========================================================================== */
 .mega-menu-content {
-  /* 1. POSITIONNEMENT */
-  position: fixed;
-  top: 8rem;
-  left: 0;
-  width: 100vw;
-  height: calc(100vh - 8rem);
-  /* 2. LE MOTEUR DE CENTRAGE */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  /* 1. STRUCTURE FIXE DE BASE */
+  position: fixed !important;
+  top: 8rem !important;
+  left: 0 !important;
+  width: 100vw !important;
+  background-color: #FFFFFF !important;
+  z-index: 999999 !important;
+  /* 2. ÉTAT INITIAL : CACHÉ */
+  display: none !important;
+  overflow-y: auto;
+  border-bottom: 2px solid #007BFF;
+  /* 3. DÉCLENCHEUR UNIQUE (BURGER) */
+  /* 4. ADAPTATION DESKTOP (Rail élargi à 1400px) */
+  /* 5. ADAPTATION MOBILE (Plein écran) */
+}
+.mega-menu-content.is-active {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -288,38 +243,42 @@ main .container {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  /* 3. APPARENCE */
-  background-color: #FFFFFF;
-  border-bottom: 2px solid #007BFF;
-  -webkit-box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
-          box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
-  overflow-y: auto;
-  overflow-x: hidden;
-  /* 4. ÉTAT INITIAL */
-  z-index: 1900;
-  visibility: hidden;
-  opacity: 0;
-  -webkit-transition: opacity 0.3s ease-in-out, visibility 0.3s;
-  transition: opacity 0.3s ease-in-out, visibility 0.3s;
+}
+@media (min-width: 1025px) {
+  .mega-menu-content {
+    height: auto !important;
+    min-height: 400px;
+    padding: 8rem 0;
+  }
+  .mega-menu-content .megamenu-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 6rem;
+    width: 100% !important;
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+    padding: 0 4rem;
+  }
+}
+@media (max-width: 1024px) {
+  .mega-menu-content {
+    height: calc(100vh - 8rem) !important;
+  }
+  .mega-menu-content .megamenu-grid {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    padding: 2rem;
+    gap: 2rem;
+  }
 }
 
-/* DÉCLENCHEUR */
-.has-mega.is-active .mega-menu-content {
-  visibility: visible;
-  opacity: 1;
-}
-
-/* 5. LA GRILLE (Désormais centrée par le parent flex) */
-.megamenu-grid {
-  display: grid !important;
-  grid-template-columns: repeat(3, minmax(240px, 1fr));
-  gap: 4rem;
-  width: 100%;
-  max-width: 1400px;
-  padding: 8rem 2rem;
-}
-
-/* TYPOGRAPHIE ET SECTIONS */
+/* --- ÉLÉMENTS INTERNES --- */
 .menu-col .col-title {
   display: block;
   font-size: 1.8rem;
@@ -339,7 +298,6 @@ main .container {
   font-weight: 700;
   margin-bottom: 1rem;
   color: #1A1A1A;
-  text-transform: uppercase;
 }
 .menu-section ul {
   list-style: none;
@@ -349,16 +307,15 @@ main .container {
   font-size: 1.3rem;
   color: #6C757D;
   padding: 0.6rem 0;
+  cursor: pointer;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
-  cursor: pointer;
 }
 .menu-section ul li:hover {
   color: #007BFF;
   padding-left: 0.5rem;
 }
 
-/* FOOTER DU MENU */
 .menu-footer {
   width: 100%;
   max-width: 1400px;
@@ -483,8 +440,6 @@ main .container {
   background: #fff;
   border-radius: 12px;
   overflow: hidden;
-  -webkit-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   border: 1px solid #eee;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -496,8 +451,12 @@ main .container {
   height: 100%;
   width: 100%;
   cursor: pointer;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  -webkit-transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 }
 .card-gradient:hover {
   -webkit-transform: translateY(-8px);
@@ -573,11 +532,17 @@ main .container {
   color: #444;
   font-family: inherit;
   font-weight: 600;
-  -webkit-transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
   width: 100%;
   position: relative;
   overflow: hidden;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+          box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  -webkit-transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 .btn-copy i {
   margin-right: 8px;
@@ -586,11 +551,10 @@ main .container {
   background: rgba(35, 35, 35, 0.75) !important;
   backdrop-filter: blur(15px) saturate(160%);
   -webkit-backdrop-filter: blur(15px) saturate(160%);
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.45) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
   color: #ffffff !important;
-  -webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+          box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.4);
   -webkit-transform: translateY(-2px);
           transform: translateY(-2px);
 }
@@ -620,10 +584,81 @@ main .container {
   backdrop-filter: none;
   -webkit-box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
           box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
-  -webkit-transform: translateY(0) scale(1);
-          transform: translateY(0) scale(1);
 }
 
+.btn-copy {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  background-color: #1e3c72;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 500;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.btn-copy i {
+  font-size: 0.9rem;
+}
+.btn-copy:hover {
+  background-color: #2a5298;
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+  -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.btn-copy:active {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+.btn-copy.copy-success {
+  background-color: #28a745 !important;
+  pointer-events: none;
+  -webkit-animation: pulse-success 0.4s ease-out;
+          animation: pulse-success 0.4s ease-out;
+}
+
+@-webkit-keyframes pulse-success {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes pulse-success {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
 .card-gradient {
   background: var(--color-bg-surface, #fff);
   border: 1px solid var(--color-border, #ddd);

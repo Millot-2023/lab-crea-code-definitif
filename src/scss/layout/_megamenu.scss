@@ -1,54 +1,63 @@
 @use '../abstracts/variables' as v;
 
 /* ==========================================================================
-   MEGA MENU - CENTRAGE DYNAMIQUE
+   MEGA MENU ALPHA - VERSION FINALE (STABILISÉE & NETTOYÉE)
    ========================================================================== */
 
 .mega-menu-content {
-    /* 1. POSITIONNEMENT */
-    position: fixed; 
-    top: v.$h-header; 
-    left: 0;
-    width: 100vw;
-    height: calc(100vh - #{v.$h-header}); 
+    /* 1. STRUCTURE FIXE DE BASE */
+    position: fixed !important;
+    top: v.$h-header !important;
+    left: 0 !important;
+    width: 100vw !important;
+    background-color: v.$color-bg-surface !important;
+    z-index: 999999 !important;
     
-    /* 2. LE MOTEUR DE CENTRAGE */
-    display: flex;          // On transforme le menu en conteneur Flex
-    flex-direction: column; // On aligne la grille et le footer verticalement
-    align-items: center;    // CENTRE TOUT HORIZONTALEMENT (La grille et le footer)
-    
-    /* 3. APPARENCE */
-    background-color: v.$color-bg-surface; 
+    /* 2. ÉTAT INITIAL : CACHÉ */
+    display: none !important;
+    overflow-y: auto;
     border-bottom: 2px solid v.$color-accent;
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
-    overflow-y: auto; 
-    overflow-x: hidden;
-    
-    /* 4. ÉTAT INITIAL */
-    z-index: 1900; 
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out, visibility 0.3s;
+
+    /* 3. DÉCLENCHEUR UNIQUE (BURGER) */
+    &.is-active {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* 4. ADAPTATION DESKTOP (Rail élargi à 1400px) */
+    @media (min-width: 1025px) {
+        height: auto !important;
+        min-height: 400px;
+        padding: v.$space-xl 0;
+
+        .megamenu-grid {
+            display: grid !important;
+            grid-template-columns: repeat(3, 1fr) !important;
+            gap: 6rem; // Plus d'espace entre les colonnes
+            width: 100% !important;
+            max-width: 1400px !important; // Optimisé pour 27 pouces
+            margin: 0 auto !important;
+            padding: 0 4rem;
+        }
+    }
+
+    /* 5. ADAPTATION MOBILE (Plein écran) */
+    @media (max-width: 1024px) {
+        height: calc(100vh - #{v.$h-header}) !important;
+        
+        .megamenu-grid {
+            display: flex !important;
+            flex-direction: column;
+            width: 100%;
+            padding: 2rem;
+            gap: 2rem;
+        }
+    }
 }
 
-/* DÉCLENCHEUR */
-.has-mega.is-active .mega-menu-content {
-    visibility: visible;
-    opacity: 1;
-}
+/* --- ÉLÉMENTS INTERNES --- */
 
-/* 5. LA GRILLE (Désormais centrée par le parent flex) */
-.megamenu-grid {
-    display: grid !important;
-    grid-template-columns: repeat(3, minmax(240px, 1fr)); 
-    gap: 4rem;
-    
-    width: 100%;           // Elle essaie de prendre toute la place...
-    max-width: 1400px;     // ...mais s'arrête ici.
-    padding: v.$space-xl 2rem; 
-}
-
-/* TYPOGRAPHIE ET SECTIONS */
 .menu-col {
     .col-title {
         display: block;
@@ -69,7 +78,6 @@
         font-weight: 700;
         margin-bottom: v.$space-s;
         color: v.$color-text-main;
-        text-transform: uppercase;
     }
     ul {
         list-style: none;
@@ -77,9 +85,9 @@
         li {
             font-size: 1.3rem;
             color: v.$color-text-muted;
-            padding: 0.6rem 0; 
-            transition: v.$transition-fast;
+            padding: 0.6rem 0;
             cursor: pointer;
+            transition: v.$transition-fast;
             &:hover {
                 color: v.$color-accent;
                 padding-left: 0.5rem;
@@ -88,7 +96,6 @@
     }
 }
 
-/* FOOTER DU MENU */
 .menu-footer {
     width: 100%;
     max-width: 1400px;
@@ -97,5 +104,5 @@
     text-align: center;
     font-size: 1.2rem;
     color: v.$color-text-muted;
-    margin-top: auto; // Pousse le footer vers le bas si le contenu est court
+    margin-top: auto;
 }

@@ -1,0 +1,53 @@
+// -----------------------------------------------------------------------------
+// COMPONENT: BUTTONS
+// -----------------------------------------------------------------------------
+
+.btn-copy {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background-color: #1e3c72; // Couleur par défaut (Bleu Alpha)
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    user-select: none;
+
+    i {
+        font-size: 0.9rem;
+    }
+
+    &:hover {
+        background-color: #2a5298;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    &:active {
+        transform: translateY(0);
+    }
+
+    // État lors de la réussite de la copie
+    &.copy-success {
+        background-color: #28a745 !important; // Vert succès
+        pointer-events: none; // Évite les clics multiples pendant l'animation
+        animation: pulse-success 0.4s ease-out;
+    }
+}
+
+// Petite animation d'impulsion au moment du clic
+@keyframes pulse-success {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

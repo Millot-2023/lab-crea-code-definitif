@@ -134,3 +134,31 @@
 ├── OBJECTIF : Zéro obsolescence technique & Modularité
 └── REGLE : Import local via abstracts/index dans chaque partiel
 ```
+
+
+
+
+
+# MÉMO TECHNIQUE : LAB-CREA-CODE (Version 1.1)
+
+## 1. NAVIGATION : MÉGA-MENU (Structure 3x3)
+Le menu est stabilisé sur une grille de 3 colonnes symétriques.
+- **Colonne 1 (Création)** : Identité / Arts Numériques / Post-Prod.
+- **Colonne 2 (Conception)** : UX / UI / Architecture Design System.
+- **Colonne 3 (Ressources)** : Composants CSS / Layouts / Standards Web.
+
+## 2. COMPOSANTS : CARDS & GRADIENTS
+- **Layout** : Full Bleed (le dégradé occupe 100% du conteneur haut).
+- **Style de bouton** : "Real Frosted Glass".
+    - Fond : Anthracite (`rgba(35, 35, 35, 0.75)`).
+    - Flou : `blur(15px)`.
+    - Détail Premium : Biseau supérieur blanc (`border-top`) et effet de reflet (shimmer) au survol.
+
+## 3. PROTOCOLE GIT (Validé)
+Dernière séquence validée :
+1. `git add includes/header.php`
+2. `git commit -m "Fix: Finalize Mega-Menu symmetry (3x3 structure)"`
+3. `git push origin main`
+
+---
+**STATUT : STABILISÉ & PUSHÉ**

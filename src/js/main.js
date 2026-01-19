@@ -1,46 +1,84 @@
-/**
- * Fichier : src/js/main.js
- * Rôle : Gestion des interactions de la bibliothèque de gradients
- */
+(function() {
+    "use strict";
 
-document.addEventListener('DOMContentLoaded', () => {
-    
-    // --- GESTION DE LA COPIE DES GRADIENTS ---
-    const copyButtons = document.querySelectorAll('.btn-copy');
+    const init = () => {
+        console.log("🚀 Moteur Alpha activé...");
 
-    if (copyButtons.length > 0) {
-        copyButtons.forEach(button => {
-            button.addEventListener('click', (e) => {
-                // On stoppe la propagation si la carte entière est cliquable
-                // Cela évite des conflits si on ajoute un lien sur la carte plus tard
-                e.stopPropagation();
+        const burger = document.getElementById('burger-trigger');
+        const menu = document.querySelector('.mega-menu-content'); 
+        const themeBtn = document.getElementById('theme-switch');
 
-                // On récupère le code CSS stocké dans le data-attribute du bouton
-                const codeToCopy = button.getAttribute('data-code');
+        // --- GESTION DU MENU BURGER ---
+        if (burger && menu) {
+            burger.addEventListener('click', function(e) {
+                e.preventDefault();
+                burger.classList.toggle('is-active');
+                menu.classList.toggle('is-active');
+                document.body.classList.toggle('no-scroll');
+                console.log("Menu Alpha : " + (menu.classList.contains('is-active') ? "OUVERT" : "FERMÉ"));
+            });
 
-                if (codeToCopy) {
-                    // Utilisation de l'API Clipboard moderne
-                    navigator.clipboard.writeText(codeToCopy).then(() => {
-                        
-                        // 1. Sauvegarde du contenu original (Texte + Icône)
-                        const originalContent = button.innerHTML;
-                        
-                        // 2. Feedback visuel immédiat
-                        button.innerHTML = '<i class="fas fa-check"></i> Copié !';
-                        button.classList.add('is-copied');
-
-                        // 3. Reset après 2 secondes pour revenir à l'état initial
-                        setTimeout(() => {
-                            button.innerHTML = originalContent;
-                            button.classList.remove('is-copied');
-                        }, 2000);
-
-                    }).catch(err => {
-                        console.error('Erreur lors de la copie : ', err);
-                        alert("Désolé, la copie a échoué.");
-                    });
+            menu.addEventListener('click', (e) => {
+                if (e.target.tagName === 'A') {
+                    burger.classList.remove('is-active');
+                    menu.classList.remove('is-active');
+                    document.body.classList.remove('no-scroll');
                 }
             });
+        }
+
+        // --- GESTION DU THÈME ---
+        if (themeBtn) {
+            themeBtn.addEventListener('click', function() {
+                document.body.classList.toggle('dark-theme');
+                const isDark = document.body.classList.contains('dark-theme');
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            });
+            if (localStorage.getItem('theme') === 'dark') {
+                document.body.classList.add('dark-theme');
+            }
+        }
+
+        // --- GESTIONNAIRE DE COPIE CSS (ALPHA) ---
+        document.addEventListener('click', function(event) {
+            const btn = event.target.closest('.btn-copy');
+            if (btn) {
+                event.preventDefault();
+                const codeToCopy = btn.getAttribute('data-code');
+                
+                if (codeToCopy) {
+                    const textArea = document.createElement("textarea");
+                    textArea.value = codeToCopy;
+                    // On rend le textarea invisible
+                    textArea.style.position = "fixed";
+                    textArea.style.left = "-9999px";
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    
+                    try {
+                        const successful = document.execCommand('copy');
+                        if (successful) {
+                            const originalHTML = btn.innerHTML;
+                            btn.innerHTML = '<i class="fas fa-check"></i> Copié !';
+                            btn.classList.add('copy-success');
+                            
+                            setTimeout(() => {
+                                btn.innerHTML = originalHTML;
+                                btn.classList.remove('copy-success');
+                            }, 2000);
+                        }
+                    } catch (err) {
+                        console.error('Erreur de copie :', err);
+                    }
+                    document.body.removeChild(textArea);
+                }
+            }
         });
+    };
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
     }
-});
+})();
