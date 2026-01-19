@@ -1,6 +1,6 @@
 @use "../abstracts/variables" as vars;
 
-// 1. LA SECTION & LA GRILLE
+// --- 1. LA SECTION & LA GRILLE ---
 .section-projects {
     padding: 60px 0;
     width: 100%;
@@ -22,7 +22,7 @@
     }
 }
 
-// 2. LA CARTE
+// --- 2. LA CARTE (Anti-Layout Shift) ---
 .grid-item {
     min-width: 0;
 }
@@ -31,14 +31,17 @@
     background: #fff;
     border-radius: 12px;
     overflow: hidden; 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     border: 1px solid #eee;
     display: flex;
     flex-direction: column;
     height: 100%;
     width: 100%;
     cursor: pointer;
-    transition: all 0.3s ease;
+    
+    // Initialisation pour éviter le saut au survol
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 
     &:hover {
         transform: translateY(-8px);
@@ -69,7 +72,7 @@
     }
 }
 
-// 3. LES INFOS
+// --- 3. LES INFOS ---
 .gradient-info {
     padding: 20px;
     text-align: center;
@@ -89,53 +92,57 @@
     }
 }
 
-// 4. LE BOUTON "REAL FROSTED GLASS" (Anthracite Premium)
+// --- 4. LE BOUTON (Anthracite Glass - Hauteur Fixe & Inset Light) ---
 .btn-copy {
     margin-top: auto;
     display: inline-block;
     cursor: pointer;
     border-radius: 10px;
     padding: 12px 20px;
+    
+    // Bordure fixe pour la stabilité structurelle
     border: 1px solid #ddd;
+    
     background: #f8f9fa;
     color: #444;
     font-family: inherit;
     font-weight: 600;
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
     width: 100%;
     position: relative;
-    overflow: hidden; // Nécessaire pour le reflet interne (shimmer)
+    overflow: hidden;
+
+    // Initialisation du Box-Model
+    box-sizing: border-box;
+    transform: translateY(0);
+    box-shadow: 0 0 0 rgba(0,0,0,0);
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 
     i {
         margin-right: 8px;
     }
 
-    // EFFET DE VERRE AU SURVOL DIRECT
     &:hover {
-        // 1. Fond Anthracite Translucide
         background: rgba(35, 35, 35, 0.75) !important;
-        
-        // 2. Flou Dépoli et Saturation
         backdrop-filter: blur(15px) saturate(160%);
         -webkit-backdrop-filter: blur(15px) saturate(160%);
         
-        // 3. Bordure Biseautée (Simule l'épaisseur du verre)
-        border: 1px solid rgba(255, 255, 255, 0.2) !important;
-        border-top: 1px solid rgba(255, 255, 255, 0.45) !important; // Éclat sur l'arête
+        // On change la couleur de la bordure existante (pas son épaisseur)
+        border-color: rgba(255, 255, 255, 0.2) !important;
         
         color: #ffffff !important;
+
+        // SOLUTION : Inset Shadow pour l'éclat du bord supérieur (ne décale rien)
+        box-shadow: 
+            0 8px 10px rgba(0, 0, 0, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.4); 
         
-        // 4. Ombre portée profonde
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
         transform: translateY(-2px);
 
-        // Déclenchement du reflet de lumière (Shimmer)
         &::after {
             left: 100%;
         }
     }
 
-    // Le reflet de lumière qui traverse le verre
     &::after {
         content: "";
         position: absolute;
@@ -156,13 +163,11 @@
         transform: translateY(0) scale(0.98);
     }
 
-    // État Copié (Success)
     &.is-copied {
         background: #27ae60 !important;
         color: #ffffff !important;
         border-color: #27ae60 !important;
         backdrop-filter: none;
         box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
-        transform: translateY(0) scale(1);
     }
 }
