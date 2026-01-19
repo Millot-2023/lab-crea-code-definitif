@@ -104,7 +104,7 @@
                             <div class="menu-section">
                                 <h3>Composants (CSS)</h3>
                                 <ul>
-                                    <li><a href="index.php?page=css">Cards & Glassmorphism</a></li>
+                                    <li><a href="index.php?page=css" style="color: #27ae60; font-weight: 600;">Cards & Glassmorphism <span style="font-size: 10px; margin-left: 5px;">✔</span></a></li>
                                     <li><a href="index.php?page=buttons">Boutons & Inputs</a></li>
                                     <li><a href="index.php?page=hover">Effets de Hover (Survol)</a></li>
                                 </ul>
