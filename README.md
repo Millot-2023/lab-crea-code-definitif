@@ -39,34 +39,39 @@
 ```text
 /root
 │
-├── index.html           # Fichier principal
+├── ux-persona.php       # Page Persona
+├── ux-journey.php       # Page User Journey
 │
-├── /assets
-│   ├── /images          # Logos, Illustrations, Retouches
-│   └── /icons           # SVGs et icônes interface
+├── /includes            # Fragments PHP réutilisables
+│   ├── header.php
+│   ├── footer.php
+│   ├── main-persona.php
+│   └── main-journey.php
+│
+├── /css                 # Fichiers compilés
+│   ├── index.css
+│   └── index.css.map
 │
 ├── /src
 │   └── /scss
-│       ├── main.scss    # LE CHEF D'ORCHESTRE (Système @use)
-│       ├── /abstracts   # Configuration (Privée via @use)
-│       │   ├── _index.scss      # Point de relais des abstracts
+│       ├── styles.scss    # LE CHEF D'ORCHESTRE (Système @use)
+│       ├── /abstracts     # Configuration
 │       │   ├── _variables.scss
-│       │   ├── _typography.scss
+│       │   ├── _mixins.scss
 │       │   └── _functions.scss
-│       ├── /base        # Fondations
+│       ├── /base          # Fondations
 │       │   └── _reset.scss
-│       ├── /layout      # Squelette
+│       ├── /layout        # Squelette
 │       │   ├── _header.scss
-│       │   ├── _footer.scss
-│       │   ├── _megamenu.scss
-│       │   └── _layout.scss
-│       └── /components  # Briques
-│           ├── _cards.scss
-│           ├── _buttons.scss
-│           └── _contact-info.scss
-│
-└── /dist                # Fichiers compilés
-    └── style.css
+│       │   └── _footer.scss
+│       ├── /components    # Briques
+│       │   ├── _cards.scss
+│       │   ├── _buttons.scss
+│       │   ├── _forms.scss
+│       │   └── _css-lab.scss
+│       └── /pages         # Styles spécifiques
+│           ├── _ux-persona.scss
+│           └── _ux-journey.scss
 ```
 
 ## 6. architecture Mega-menu

@@ -18,8 +18,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LAB-CREA-CODE | Book Architecture</title>
+    <meta name="description" content="Portfolio de mon méga-projet UX/UI : Études de personas, customer journey et bibliothèque de composants CSS (Cards).">
     <link rel="stylesheet" href="css/styles.css?v=<?php echo time(); ?>">
-    
 </head>
 <body>
 
@@ -41,7 +41,7 @@
             </div>
         </div>
 
-        <a href="#projets" class="hero-chevron" 
+        <a href="#projets" class="hero-chevron" aria-label="Défiler vers le contenu"
            style="position: absolute; bottom: 30px; left: 50%; z-index: 999; width: 50px; height: 50px; display: block !important; transform: translateX(-50%);">
             <svg viewBox="0 0 24 24" style="width: 100%; height: 100%; display: block;" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M7 10L12 15L17 10" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
