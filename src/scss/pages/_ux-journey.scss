@@ -1,0 +1,82 @@
+.userJourney-wrapper {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 20px;
+
+    .userJourney-header {
+        text-align: center;
+        margin-bottom: 80px;
+        h2 { font-size: 2.2rem; color: #2c3e50; margin-bottom: 10px; }
+        p { color: #7f8c8d; font-size: 1.1rem; }
+    }
+
+    .userJourney-timeline {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        // La ligne verticale centrale
+        &::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #e0e0e0;
+        }
+    }
+
+    .userJourney-step {
+        display: flex;
+        gap: 30px;
+        position: relative;
+
+        .step-marker {
+            flex: 0 0 42px;
+            height: 42px;
+            background: #4834d4;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            z-index: 2;
+            box-shadow: 0 0 0 6px #f9f9f9;
+        }
+
+        .step-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+            flex: 1;
+
+            .step-phase {
+                font-size: 0.8rem;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                color: #4834d4;
+                font-weight: 700;
+                display: block;
+                margin-bottom: 8px;
+            }
+
+            h4 { font-size: 1.3rem; margin-bottom: 12px; color: #2c3e50; }
+            p { color: #555; line-height: 1.6; margin-bottom: 20px; }
+
+            .step-meta {
+                display: flex;
+                gap: 20px;
+                border-top: 1px solid #f0f0f0;
+                padding-top: 15px;
+                font-size: 0.9rem;
+                font-weight: 500;
+            }
+        }
+    }
+}

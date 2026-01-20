@@ -69,8 +69,8 @@
                             <div class="menu-section">
                                 <h3>Analyse & UX</h3>
                                 <ul>
-                                    <li><a href="index.php?page=personas">Études Personas</a></li>
-                                    <li><a href="index.php?page=user-journey">Parcours Utilisateurs</a></li>
+                                    <li><a href="ux-persona.php" style="color: #27ae60; font-weight: 600;">Études Personas<span style="font-size: 10px; margin-left: 5px;">✔</span></a></li><!--OK-->
+                                    <li><a href="ux-journey.php" style="color: #27ae60; font-weight: 600;">Ux Journey<span style="font-size: 10px; margin-left: 5px;">✔</span></a></li><!--OK-->
                                     <li><a href="index.php?page=audit">Audits Ergonomiques</a></li>
                                 </ul>
                             </div>

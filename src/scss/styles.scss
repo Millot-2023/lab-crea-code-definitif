@@ -15,5 +15,10 @@
 // 4. COMPONENTS (Éléments)
 @use 'components/buttons';
 @use 'components/cards';
+@use 'components/forms';     // Inputs, Labels, Textareas
 @use 'components/css-lab';
 @use 'components/contact-info';
+
+// 5. PAGES
+@use 'pages/ux-persona';
+@use 'pages/ux-journey';

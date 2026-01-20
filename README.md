@@ -139,7 +139,7 @@
 
 
 
-# MÉMO TECHNIQUE : LAB-CREA-CODE (Version 1.1)
+# 8. MÉMO TECHNIQUE : LAB-CREA-CODE (Version 1.1)
 
 ## 1. NAVIGATION : MÉGA-MENU (Structure 3x3)
 Le menu est stabilisé sur une grille de 3 colonnes symétriques.
@@ -154,7 +154,7 @@ Le menu est stabilisé sur une grille de 3 colonnes symétriques.
     - Flou : `blur(15px)`.
     - Détail Premium : Biseau supérieur blanc (`border-top`) et effet de reflet (shimmer) au survol.
 
-## 3. PROTOCOLE GIT (Validé)
+## 9. PROTOCOLE GIT (Validé)
 Dernière séquence validée :
 1. `git add includes/header.php`
 2. `git commit -m "Fix: Finalize Mega-Menu symmetry (3x3 structure)"`
@@ -162,3 +162,51 @@ Dernière séquence validée :
 
 ---
 **STATUT : STABILISÉ & PUSHÉ**
+
+## 10. STRUCTURE DE TRAVAIL "LAB-CREA-CODE"
+
+Cette étape définit la création d'une bibliothèque de composants UX-UI isolés. Chaque module est une entité autonome (Page Distinctive) permettant une démonstration stratégique auprès du client.
+
+### 10.1 Philosophie d'Isolation
+* **Indépendance totale** : Chaque outil possède son propre fichier racine PHP et son propre fichier de style SCSS.
+* **Encapsulation CSS** : Utilisation d'une classe racine unique (ex: `.ux-page-persona`) pour garantir l'étanchéité du style.
+* **Objectif Client** : Fournir des briques de réflexion utilisables comme modèles de démonstration ou d'éducation (notamment pour les franchisés).
+
+### 10.2 Ordre d'Exécution des Modules
+1. **Page Persona** : Définition de la cible et des besoins psychologiques.
+2. **Page User Journey** : Cartographie du parcours utilisateur et des points de contact.
+3. **Page Style Tile** : Synthèse visuelle (couleurs, typographies, textures) avant design final.
+4. **Page Brand Guidelines** : Éducation au respect de la charte et des contraintes de marque.
+
+### 10.3 Évolution de l'Arborescence
+L'intégration de ces modules impacte la structure comme suit :
+
+```text
+C:.
+│   ux-persona.php          <-- Page distinctive 01
+│   ux-journey.php          <-- Page distinctive 02
+│   ux-styletile.php        <-- Page distinctive 03
+│   ux-brand.php            <-- Page distinctive 04
+│
+└───src
+    └───scss
+        ├───pages
+        │       _ux-persona.scss    <-- Style isolé 01
+        │       _ux-journey.scss    <-- Style isolé 02
+        │       _ux-styletile.scss  <-- Style isolé 03
+        │       _ux-brand.scss      <-- Style isolé 04
+```
+### ETAPE 1 : Création de la Page 01 (Persona)
+
+
+
+
+### ETAPE 2 : Création de la Page 01 (Persona)
+
+
+
+
+
+
+
+**Souhaites-tu que je te génère le code complet pour `ux-persona.php` et son fichier SCSS `_ux-persona.scss` en suivant scrupuleusement cette règle d'isolation ?**
