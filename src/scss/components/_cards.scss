@@ -1,0 +1,40 @@
+@use '../abstracts/variables' as v;
+
+/* ==========================================================================
+   COMPOSANT CARD (BRIQUE)
+   ========================================================================== */
+
+.card {
+    flex: 1 1 calc(33.333% - v.$space-m);
+    min-width: 280px; 
+    background: v.$color-bg-surface;
+    padding: v.$space-m;
+    border-radius: v.$border-radius-m;
+    border: 1px solid v.$color-border;
+    transition: v.$transition-main;
+    display: flex;
+    flex-direction: column;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+
+        // Application de votre règle : survol discret
+        h3 {
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+    }
+
+    h3 {
+        margin-bottom: v.$space-s;
+        color: v.$color-text-main;
+        font-size: 1.25rem;
+    }
+
+    p {
+        color: v.$color-text-muted; // Utilisation d'une variable pour la douceur
+        line-height: 1.5;
+        margin: 0;
+    }
+}

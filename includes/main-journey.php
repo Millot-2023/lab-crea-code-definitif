@@ -1,4 +1,18 @@
-<section class="section-projects">
+<?php
+/**
+ * FICHIER : main-ux-journey.php
+ * DESTINATION : Section Journey de la page ux-journey.php
+ * STRUCTURE : Header hiérarchique + Sélecteur de parcours dynamiques
+ */
+?>
+
+<section class="section-projects" id="projets">
+    <div class="container section-header" style="margin-bottom: 40px;">
+        <h1>Expérience & Parcours</h1>
+        <h2>Cartographie des interactions et points de contact</h2>
+        <h3>Visualisation des étapes clés de l'expérience utilisateur</h3>
+    </div>
+
     <div class="userJourney-wrapper">
         
         <div class="journey-navigation">
@@ -64,7 +78,6 @@ function copyHTML(e) {
 function copyCSS(e) {
     if(e) e.stopPropagation();
     
-    // On livre ici ton SCSS propre pour le self-service
     const scssCode = `.userJourney-wrapper {
     width: 100%;
     max-width: 1000px;

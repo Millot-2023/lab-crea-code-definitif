@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LAB-CREA-CODE | UX Persona</title>
-    <link rel="stylesheet" href="css/styles.css?v=<?php echo time(); ?>">
+<link rel="stylesheet" href="css/styles.css?v=<?php echo time(); ?>">
 </head>
 <body class="ux-page-persona">
 
@@ -20,7 +20,7 @@
         <div class="hero-overlay" style="position: relative; z-index: 2; height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.3);">
             <div class="hero-container">
                 <div class="hero-content" style="text-align: center; color: white;">
-                    <h1 style="font-size: clamp(3.5rem, 8vw, 6rem); margin: 0;">User Persona</h1>
+                    <h1 style="font-size: clamp(3.5rem, 8vw, 6rem); margin: 0;">User Persona</h1><!--titre page ux persona-->
                     <p style="font-size: 1.5rem; opacity: 0.9;">Analyse psychologique et comportementale des cibles.</p>
                 </div>
             </div>
@@ -34,10 +34,9 @@
         </a>
     </section>
 
-    <div id="projets" class="container">
+    <div id="projets" class="container" style="padding-top: 0;">
         <?php include 'includes/main-persona.php'; ?>
     </div>
-
 </main>
 
 <?php include 'includes/footer.php'; ?>
