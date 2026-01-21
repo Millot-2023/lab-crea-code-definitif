@@ -1,61 +1,146 @@
 <section class="section-projects">
     <div class="userJourney-wrapper">
         
-        <header class="userJourney-header">
-            <h2>Parcours Utilisateur : "Le Technophile Pressé"</h2>
-            <p>Objectif : Configurer et déployer son premier projet en moins de 5 minutes.</p>
-        </header>
-
-        <div class="userJourney-timeline">
-            
-            <article class="userJourney-step">
-                <div class="step-marker">01</div>
-                <div class="step-content">
-                    <span class="step-phase">Phase de Découverte</span>
-                    <h4>Arrivée sur le Dashboard</h4>
-                    <p>L'utilisateur cherche intuitivement le bouton "Nouveau Projet".</p>
-                    <div class="step-meta">
-                        <span class="mood">😊 Confiant</span>
-                        <span class="touchpoint">💻 Desktop App</span>
-                    </div>
-                </div>
-            </article>
-
-            <article class="userJourney-step">
-                <div class="step-marker">02</div>
-                <div class="step-content">
-                    <span class="step-phase">Phase d'Action</span>
-                    <h4>Configuration Technique</h4>
-                    <p>Saisie des variables d'environnement et choix du dépôt Git.</p>
-                    <div class="step-meta">
-                        <span class="mood">😐 Concentré</span>
-                        <span class="touchpoint">⚙️ Formulaire</span>
-                    </div>
-                </div>
-            </article>
-
-            <article class="userJourney-step">
-                <div class="step-marker">03</div>
-                <div class="step-content">
-                    <span class="step-phase">Point de Friction</span>
-                    <h4>Validation du Build</h4>
-                    <p>L'attente sans indicateur de progression crée de l'incertitude.</p>
-                    <div class="step-meta">
-                        <span class="mood">😟 Anxieux</span>
-                        <span class="touchpoint">⏳ Loader</span>
-                    </div>
-                </div>
-            </article>
-
+        <div class="journey-navigation">
+            <button class="btn-persona active" onclick="selectPersona(event, '1')">Parcours 01</button>
+            <button class="btn-persona" onclick="selectPersona(event, '2')">Parcours 02</button>
+            <button class="btn-persona" onclick="selectPersona(event, '3')">Parcours 03</button>
         </div>
 
-    </div>
-
-    <!--Bouton-->
-<div class="page-actions">
-            <button class="btn-copy-persona">
-                <span>📋</span> Copier la User Journey
+        <div class="journey-toolbar">
+            <button type="button" class="btn-tool" onclick="copyHTML(event)">
+                <span>📋</span> Copier le HTML
+            </button>
+            <button type="button" class="btn-tool" onclick="copyCSS(event)">
+                <span>🎨</span> Copier le SCSS
             </button>
         </div>
-<!--Bouton-->
+
+        <div id="journey-dynamic-container">
+            <div id="persona-1" class="persona-content active">
+                <?php include 'includes/journey/main-journey1.php'; ?>
+            </div>
+            <div id="persona-2" class="persona-content">
+                <?php include 'includes/journey/main-journey2.php'; ?>
+            </div>
+            <div id="persona-3" class="persona-content">
+                <?php include 'includes/journey/main-journey3.php'; ?>
+            </div>
+        </div>
+    </div>
 </section>
+
+<script>
+function selectPersona(e, personaId) {
+    if(e) e.stopPropagation();
+
+    const buttons = document.querySelectorAll('.btn-persona');
+    buttons.forEach(btn => btn.classList.remove('active'));
+    if(e && e.currentTarget) e.currentTarget.classList.add('active');
+
+    const contents = document.querySelectorAll('.persona-content');
+    contents.forEach(content => content.classList.remove('active'));
+    
+    const activeContent = document.getElementById('persona-' + personaId);
+    if(activeContent) activeContent.classList.add('active');
+}
+
+function copyHTML(e) {
+    if(e) e.stopPropagation();
+    
+    const activePersona = document.querySelector('.persona-content.active');
+    const content = activePersona.querySelector('[id^="source-"]');
+    
+    if (content) {
+        const htmlCode = content.innerHTML.trim();
+        navigator.clipboard.writeText(htmlCode).then(() => {
+            alert("✅ HTML du parcours copié !");
+        }).catch(err => {
+            console.error('Erreur de copie :', err);
+        });
+    }
+}
+
+function copyCSS(e) {
+    if(e) e.stopPropagation();
+    
+    // On livre ici ton SCSS propre pour le self-service
+    const scssCode = `.userJourney-wrapper {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    .userJourney-timeline {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #e0e0e0;
+        }
+    }
+
+    .userJourney-step {
+        display: flex;
+        gap: 30px;
+        position: relative;
+
+        .step-marker {
+            flex: 0 0 42px;
+            height: 42px;
+            background: #4834d4;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            z-index: 2;
+            box-shadow: 0 0 0 6px #fff;
+        }
+
+        .step-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+            flex: 1;
+
+            .step-phase {
+                font-size: 0.8rem;
+                text-transform: uppercase;
+                color: #4834d4;
+                font-weight: 700;
+                display: block;
+                margin-bottom: 8px;
+            }
+
+            h4 { font-size: 1.3rem; margin-bottom: 12px; color: #2c3e50; }
+            p { color: #555; line-height: 1.6; }
+
+            .step-meta {
+                display: flex;
+                gap: 20px;
+                border-top: 1px solid #f0f0f0;
+                padding-top: 15px;
+                font-size: 0.9rem;
+            }
+        }
+    }
+}`;
+
+    navigator.clipboard.writeText(scssCode).then(() => {
+        alert("✅ Code SCSS copié avec succès !");
+    }).catch(err => {
+        console.error('Erreur de copie :', err);
+    });
+}
+</script>

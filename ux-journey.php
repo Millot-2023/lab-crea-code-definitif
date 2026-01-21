@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LAB-CREA-CODE | UX Persona</title>
-    <link rel="stylesheet" href="css/styles.css?v=<?php echo time(); ?>">
+<link rel="stylesheet" href="css/styles.css?v=<?php echo time(); ?>">
 </head>
 <body class="ux-page-persona">
 
@@ -34,16 +34,9 @@
         </a>
     </section>
 
-    <div id="projets" class="container">
+    <div id="projets" class="container" style="padding-top: 0;">
         <?php include 'includes/main-journey.php'; ?>
     </div>
-
-
-
-
-
-
-
 </main>
 
 <?php include 'includes/footer.php'; ?>
