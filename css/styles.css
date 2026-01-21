@@ -978,15 +978,113 @@ main .container {
   line-height: 1.4;
 }
 
+/* ==========================================================================
+   PAGE : UX JOURNEY
+   ========================================================================== */
+#projets {
+  scroll-margin-top: 80px;
+}
+
+.section-projects {
+  margin-top: 0 !important;
+  padding-top: 40px !important;
+}
+.section-projects .journey-navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.section-projects .journey-navigation .btn-persona {
+  padding: 10px 20px;
+  border: 2px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 5px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.section-projects .journey-navigation .btn-persona:hover {
+  border-color: #4834d4;
+  color: #4834d4;
+}
+.section-projects .journey-navigation .btn-persona.active {
+  background: #4834d4;
+  color: #fff;
+  border-color: #4834d4;
+}
+.section-projects .journey-toolbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  border: 1px dashed #dcdde1;
+}
+.section-projects .journey-toolbar .btn-tool {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: #fff;
+  border: 1px solid #d1d5db;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  color: #4b5563;
+}
+.section-projects .journey-toolbar .btn-tool:hover {
+  background: #fff;
+  border-color: #4834d4;
+  color: #4834d4;
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+  -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+.section-projects .journey-toolbar .btn-tool span {
+  font-size: 1rem;
+}
+.section-projects .persona-content {
+  display: none;
+}
+.section-projects .persona-content.active {
+  display: block;
+}
+
 .userJourney-wrapper {
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
-  padding: 60px 20px;
+  padding: 0 20px 40px;
 }
 .userJourney-wrapper .userJourney-header {
   text-align: center;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
 }
 .userJourney-wrapper .userJourney-header h2 {
   font-size: 2.2rem;
@@ -1043,8 +1141,8 @@ main .container {
           justify-content: center;
   font-weight: bold;
   z-index: 2;
-  -webkit-box-shadow: 0 0 0 6px #f9f9f9;
-          box-shadow: 0 0 0 6px #f9f9f9;
+  -webkit-box-shadow: 0 0 0 6px #fff;
+          box-shadow: 0 0 0 6px #fff;
 }
 .userJourney-wrapper .userJourney-step .step-content {
   background: #fff;
