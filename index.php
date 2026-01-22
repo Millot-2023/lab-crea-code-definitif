@@ -20,6 +20,7 @@
     <title>LAB-CREA-CODE | Book Architecture</title>
     <meta name="description" content="Portfolio de mon méga-projet UX/UI : Études de personas, customer journey et bibliothèque de composants CSS (Cards).">
     <link rel="stylesheet" href="css/styles.css?v=<?php echo time(); ?>">
+    <!-- <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico"> -->
 </head>
 <body>
 

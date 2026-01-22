@@ -957,7 +957,7 @@ button {
 }
 
 /* ==========================================================================
-   PAGE : UX PERSONA - RÉTABLISSEMENT DU FLEX
+   PAGE : UX PERSONA - RESPECT DE LA STRUCTURE ET DES BOUTONS EXISTANTS
    ========================================================================== */
 .persona-tab-content {
   width: 100%;
@@ -1070,11 +1070,6 @@ button {
   grid-template-columns: 1fr 1fr;
   gap: 2.5rem;
 }
-@media (max-width: 600px) {
-  .persona-main .persona-grid {
-    grid-template-columns: 1fr;
-  }
-}
 .persona-main .persona-grid .col-title {
   font-size: 1.1rem;
   border-left: 4px solid #4834d4;
@@ -1103,7 +1098,7 @@ button {
   content: "✕";
   color: #e74c3c;
 }
-.persona-main .persona-footer {
+.persona-main .persona-main .persona-footer {
   margin-top: 2rem;
   background: #f8f9fa;
   padding: 1.5rem;
@@ -1111,7 +1106,8 @@ button {
   border-left: 5px solid #4834d4;
 }
 
-.journey-nav {
+/* NAVIGATION & TOOLBAR (Classes basées sur votre main-persona.php) */
+.journey-navigation, .journey-toolbar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1119,18 +1115,10 @@ button {
       -ms-flex-pack: center;
           justify-content: center;
   gap: 1rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
 }
-.journey-nav .nav-btn {
-  padding: 0.7rem 1.8rem;
-  border-radius: 50px;
-  border: 2px solid #e0e0e0;
-  background: #fff;
-  cursor: pointer;
-  font-weight: 600;
-}
-.journey-nav .nav-btn.active {
-  background: #4834d4;
-  color: #fff;
-  border-color: #4834d4;
+
+.btn-persona.active {
+  background: #4834d4 !important;
+  color: #fff !important;
 }/*# sourceMappingURL=styles.css.map */
