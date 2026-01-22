@@ -1,108 +1,155 @@
 @use '../abstracts/variables' as v;
 
 /* ==========================================================================
-   MEGA MENU ALPHA - VERSION FINALE (STABILISÉE & NETTOYÉE)
+   MEGA MENU - STRUCTURE GLOBALE & SÉCURITÉ D'AFFICHAGE
    ========================================================================== */
 
 .mega-menu-content {
-    /* 1. STRUCTURE FIXE DE BASE */
-    position: fixed !important;
-    top: v.$h-header !important;
-    left: 0 !important;
-    width: 100vw !important;
-    background-color: v.$color-bg-surface !important;
-    z-index: 999999 !important;
-    
-    /* 2. ÉTAT INITIAL : CACHÉ */
-    display: none !important;
-    overflow-y: auto;
-    border-bottom: 2px solid v.$color-accent;
+    display: none; // Masqué par défaut
+    position: fixed;
+    left: 0;
+    width: 100vw;
+    z-index: 999999;
 
-    /* 3. DÉCLENCHEUR UNIQUE (BURGER) */
     &.is-active {
-        display: flex !important;
-        flex-direction: column;
-        align-items: center;
+        display: flex !important; // Force l'apparition quand le JS s'active
     }
 
-    /* 4. ADAPTATION DESKTOP (Rail élargi à 1400px) */
+    /* --- RAIL DESKTOP 1400px (SANCTUARISÉ) --- */
     @media (min-width: 1025px) {
-        height: auto !important;
-        min-height: 400px;
+        top: v.$h-header;
+        background-color: v.$color-bg-surface;
         padding: v.$space-xl 0;
-
-        .megamenu-grid {
-            display: grid !important;
-            grid-template-columns: repeat(3, 1fr) !important;
-            gap: 6rem; // Plus d'espace entre les colonnes
-            width: 100% !important;
-            max-width: 1400px !important; // Optimisé pour 27 pouces
-            margin: 0 auto !important;
-            padding: 0 4rem;
-        }
-    }
-
-    /* 5. ADAPTATION MOBILE (Plein écran) */
-    @media (max-width: 1024px) {
-        height: calc(100vh - #{v.$h-header}) !important;
+        border-bottom: 2px solid v.$color-accent;
+        height: auto;
         
         .megamenu-grid {
-            display: flex !important;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 6rem; 
             width: 100%;
-            padding: 2rem;
-            gap: 2rem;
+            max-width: 1400px; 
+            margin: 0 auto;
+            padding: 0 4rem;
         }
-    }
-}
 
-/* --- ÉLÉMENTS INTERNES --- */
-
-.menu-col {
-    .col-title {
-        display: block;
-        font-size: 1.8rem;
-        color: v.$color-accent;
-        font-weight: 800;
-        text-transform: uppercase;
-        margin-bottom: v.$space-m;
-        border-bottom: 1px solid v.$color-border;
-        padding-bottom: v.$space-xs;
-    }
-}
-
-.menu-section {
-    margin-bottom: v.$space-l;
-    h3 {
-        font-size: 1.4rem;
-        font-weight: 700;
-        margin-bottom: v.$space-s;
-        color: v.$color-text-main;
-    }
-    ul {
-        list-style: none;
-        padding: 0;
-        li {
-            font-size: 1.3rem;
-            color: v.$color-text-muted;
+        .icon-wrapper, .arrow { display: none; }
+        
+        .mobile-pill-title { 
+            color: v.$color-text-main;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: v.$space-s;
+            display: block;
+        }
+        
+        .menu-section ul li {
+            list-style: none;
             padding: 0.6rem 0;
-            cursor: pointer;
-            transition: v.$transition-fast;
-            &:hover {
-                color: v.$color-accent;
-                padding-left: 0.5rem;
+            a {
+                color: v.$color-text-muted;
+                font-size: 1.3rem;
+                text-decoration: none;
+                &:hover {
+                    color: v.$color-accent;
+                    padding-left: 0.5rem;
+                }
             }
         }
     }
-}
 
-.menu-footer {
-    width: 100%;
-    max-width: 1400px;
-    padding: v.$space-xl 2rem;
-    border-top: 1px solid v.$color-border;
-    text-align: center;
-    font-size: 1.2rem;
-    color: v.$color-text-muted;
-    margin-top: auto;
+    /* --- MODE MOBILE EXCLUSIF --- */
+    @media (max-width: 1024px) {
+        top: v.$h-header;
+        height: calc(100vh - #{v.$h-header});
+        background-color: #050505;
+        overflow-y: auto;
+        flex-direction: column;
+
+        .megamenu-grid {
+            padding: 2.5rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 3.2rem;
+        }
+
+        .col-title {
+            color: #ffffff;
+            font-size: 2.4rem;
+            font-weight: 900;
+            margin-bottom: 2.5rem;
+            display: block;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 1rem;
+        }
+
+        .mobile-pill-title {
+            background: linear-gradient(145deg, rgba(v.$color-accent, 0.18) 0%, rgba(v.$color-accent, 0.05) 100%);
+            border: 1px solid rgba(v.$color-accent, 0.25);
+            border-radius: 12px;
+            padding: 1.4rem 1.5rem;
+            margin-bottom: 1.2rem;
+            color: #ffffff;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            &::before {
+                content: '';
+                width: 5px;
+                height: 18px;
+                background: v.$color-accent;
+                margin-right: 15px;
+                border-radius: 2px;
+            }
+        }
+
+        .is-pill {
+            list-style: none;
+            margin-bottom: 0.8rem;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 14px;
+            overflow: hidden;
+
+            a {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                padding: 1.3rem 1.5rem;
+                text-decoration: none;
+
+                .icon-wrapper {
+                    display: flex;
+                    width: 42px;
+                    height: 42px;
+                    background: rgba(v.$color-accent, 0.12);
+                    border-radius: 10px;
+                    margin-right: 1.5rem;
+                    align-items: center;
+                    justify-content: center;
+                    flex-shrink: 0;
+                    svg { width: 22px; height: 22px; stroke: v.$color-accent; }
+                }
+
+                .link-text {
+                    flex-grow: 1;
+                    font-size: 1.6rem;
+                    font-weight: 500;
+                    color: rgba(255, 255, 255, 0.95);
+                }
+
+                .arrow {
+                    display: inline-block;
+                    color: v.$color-accent;
+                    font-size: 1.4rem;
+                    font-weight: bold;
+                    opacity: 0.6;
+                }
+            }
+            &:active { background: rgba(v.$color-accent, 0.15); }
+        }
+    }
 }
