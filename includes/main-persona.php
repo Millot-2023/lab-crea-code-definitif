@@ -1,7 +1,7 @@
 <?php
 /**
  * FICHIER : main-persona.php
- * NAVIGATION : Gestion stricte de l'état active des boutons
+ * NAVIGATION : Gestion des onglets et fonctions de copie paramétrées
  */
 ?>
 
@@ -44,24 +44,27 @@
 </section>
 
 <script>
+/**
+ * Gère le changement d'onglet et l'état actif des boutons
+ */
 function selectPersona(e, personaId) {
     if(e) {
         e.preventDefault();
         e.stopPropagation();
     }
 
-    // 1. NETTOYAGE : On cible exactement la classe .btn-persona
+    // 1. NETTOYAGE : Désactive tous les boutons persona
     const buttons = document.querySelectorAll('.btn-persona');
     buttons.forEach(btn => {
         btn.classList.remove('active');
     });
 
-    // 2. ACTIVATION : On ajoute active uniquement au bouton cliqué
+    // 2. ACTIVATION : Allume le bouton cliqué
     if(e && e.currentTarget) {
         e.currentTarget.classList.add('active');
     }
 
-    // 3. AFFICHAGE DES CONTENUS
+    // 3. AFFICHAGE : Masque tous les contenus et affiche le sélectionné
     const contents = document.querySelectorAll('.persona-tab-content');
     contents.forEach(content => {
         content.classList.remove('active');
@@ -71,23 +74,71 @@ function selectPersona(e, personaId) {
     const activeContent = document.getElementById('persona-' + personaId);
     if(activeContent) {
         activeContent.classList.add('active');
-        activeContent.style.display = 'flex'; // On garde le flex pour la structure paysage
+        activeContent.style.display = 'flex'; // Maintient la structure Flexbox
     }
 }
 
-// Fonctions de copie simplifiées pour éviter les erreurs
+/**
+ * COPIE HTML : Récupère la structure du persona actif
+ */
 function copyHTML(e) {
     if(e) e.stopPropagation();
+    
+    // Cible spécifiquement la .persona-card dans l'onglet actif
     const activePersona = document.querySelector('.persona-tab-content.active .persona-card');
+    
     if (activePersona) {
-        navigator.clipboard.writeText(activePersona.outerHTML);
-        alert("✅ HTML du Persona copié !");
+        const htmlCode = activePersona.outerHTML;
+        navigator.clipboard.writeText(htmlCode).then(() => {
+            alert("✅ Structure HTML du Persona copiée !");
+        }).catch(err => {
+            console.error('Erreur de copie HTML :', err);
+        });
     }
 }
 
+/**
+ * COPIE SCSS : Envoie le bloc de style robuste paysage
+ */
 function copyCSS(e) {
     if(e) e.stopPropagation();
-    // Ici tu peux insérer ton code SCSS habituel
-    alert("✅ SCSS copié !");
+    
+    const scssCode = `.persona-card {
+    display: flex;
+    flex-direction: row;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    min-height: 500px;
+    border: 1px solid #eee;
+
+    .persona-sidebar {
+        flex: 0 0 320px;
+        background-color: #2c3e50;
+        color: #fff;
+        padding: 3rem 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .persona-main {
+        flex: 1;
+        padding: 3.5rem;
+        background: #fff;
+    }
+
+    @media (max-width: 900px) {
+        flex-direction: column;
+    }
+}`;
+
+    navigator.clipboard.writeText(scssCode).then(() => {
+        alert("✅ Code SCSS (Architecture Flex) copié !");
+    }).catch(err => {
+        console.error('Erreur de copie SCSS :', err);
+    });
 }
 </script>

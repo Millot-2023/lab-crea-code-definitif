@@ -14,7 +14,7 @@
 .persona-wrapper {
     width: 100%;
     max-width: 1100px;
-    margin: 0 auto;
+    margin: 0 auto; // Centrage horizontal parfait pour les grands écrans
 
     // LA CARTE : Alignement horizontal forcé
     .persona-card {
@@ -117,7 +117,7 @@
         &.list-cross li::before { content: '✕'; color: #e74c3c; }
     }
 
-    .persona-footer {
+    .persona-main .persona-footer {
         margin-top: 2rem;
         background: #f8f9fa;
         padding: 1.5rem;
