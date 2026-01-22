@@ -50,6 +50,66 @@ button {
 }
 
 /* ==========================================================================
+   LOGIQUE DE SWITCH & COULEURS DARK MODE
+   ========================================================================== */
+.theme-btn .sun-icon {
+  display: none !important;
+}
+.theme-btn .moon-icon {
+  display: block !important;
+}
+
+body.dark-theme {
+  background-color: #050505 !important;
+  color: #ffffff !important;
+}
+body.dark-theme .theme-btn .sun-icon {
+  display: block !important;
+}
+body.dark-theme .theme-btn .moon-icon {
+  display: none !important;
+}
+body.dark-theme .burger-btn .burger-line {
+  background-color: #ffffff !important;
+}
+body.dark-theme header.main-header {
+  background-color: #0a0a0b !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+body.dark-theme header.main-header .logo {
+  color: #ffffff !important;
+}
+body.dark-theme header.main-header .action-btn, body.dark-theme header.main-header .theme-btn {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.05);
+}
+body.dark-theme header.main-header .action-btn svg, body.dark-theme header.main-header .theme-btn svg {
+  stroke: #ffffff !important;
+}
+body.dark-theme .mega-menu-content {
+  background-color: #0a0a0b !important;
+}
+body.dark-theme .mega-menu-content .col-title, body.dark-theme .mega-menu-content .mobile-pill-title, body.dark-theme .mega-menu-content .link-text {
+  color: #ffffff !important;
+}
+body.dark-theme .mega-menu-content .is-pill {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+body.dark-theme .mega-menu-content .is-pill a {
+  color: #ffffff !important;
+}
+body.dark-theme .mega-menu-content .is-pill a .icon-wrapper {
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+body.dark-theme .mega-menu-content .is-pill a .icon-wrapper svg {
+  stroke: #ffffff !important;
+}
+body.dark-theme .mega-menu-content .is-pill a .arrow {
+  color: #ffffff !important;
+}
+
+/* ==========================================================================
    RAIL DE STRUCTURE (1200px)
    ========================================================================== */
 .container {
@@ -191,117 +251,177 @@ button {
 /* 4. NETTOYAGE */
 /* Rappel : Le menu lui-même est géré dans layout/_megamenu.scss */
 /* ==========================================================================
-   MEGA MENU ALPHA - VERSION FINALE (STABILISÉE & NETTOYÉE)
+   MEGA MENU - STRUCTURE GLOBALE & SÉCURITÉ D'AFFICHAGE
    ========================================================================== */
 .mega-menu-content {
-  /* 1. STRUCTURE FIXE DE BASE */
-  position: fixed !important;
-  top: 8rem !important;
-  left: 0 !important;
-  width: 100vw !important;
-  background-color: #FFFFFF !important;
-  z-index: 999999 !important;
-  /* 2. ÉTAT INITIAL : CACHÉ */
-  display: none !important;
-  overflow-y: auto;
-  border-bottom: 2px solid #007BFF;
-  /* 3. DÉCLENCHEUR UNIQUE (BURGER) */
-  /* 4. ADAPTATION DESKTOP (Rail élargi à 1400px) */
-  /* 5. ADAPTATION MOBILE (Plein écran) */
+  display: none;
+  position: fixed;
+  left: 0;
+  width: 100vw;
+  z-index: 999999;
+  /* --- RAIL DESKTOP 1400px --- */
+  /* --- MODE MOBILE EXCLUSIF --- */
 }
-.mega-menu-content.is-active {
+.mega-menu-content.active, .mega-menu-content.is-active {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 @media (min-width: 1025px) {
   .mega-menu-content {
-    height: auto !important;
-    min-height: 400px;
+    top: 8rem;
+    background-color: #FFFFFF;
     padding: 8rem 0;
+    border-bottom: 2px solid #007BFF;
+    height: auto;
   }
   .mega-menu-content .megamenu-grid {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 6rem;
-    width: 100% !important;
-    max-width: 1400px !important;
-    margin: 0 auto !important;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
     padding: 0 4rem;
+  }
+  .mega-menu-content .icon-wrapper, .mega-menu-content .arrow {
+    display: none;
+  }
+  .mega-menu-content .mobile-pill-title {
+    color: #1A1A1A;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    display: block;
+  }
+  .mega-menu-content .menu-section ul li {
+    list-style: none;
+    padding: 0.6rem 0;
+  }
+  .mega-menu-content .menu-section ul li a {
+    color: #6C757D;
+    font-size: 1.3rem;
+    text-decoration: none;
+  }
+  .mega-menu-content .menu-section ul li a:hover {
+    color: #007BFF;
+    padding-left: 0.5rem;
   }
 }
 @media (max-width: 1024px) {
   .mega-menu-content {
-    height: calc(100vh - 8rem) !important;
-  }
-  .mega-menu-content .megamenu-grid {
-    display: -webkit-box !important;
-    display: -ms-flexbox !important;
-    display: flex !important;
+    top: 8rem;
+    height: calc(100vh - 8rem);
+    background-color: #FFFFFF;
+    overflow-y: auto;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    width: 100%;
-    padding: 2rem;
-    gap: 2rem;
   }
-}
-
-/* --- ÉLÉMENTS INTERNES --- */
-.menu-col .col-title {
-  display: block;
-  font-size: 1.8rem;
-  color: #007BFF;
-  font-weight: 800;
-  text-transform: uppercase;
-  margin-bottom: 2rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  padding-bottom: 0.5rem;
-}
-
-.menu-section {
-  margin-bottom: 4rem;
-}
-.menu-section h3 {
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: #1A1A1A;
-}
-.menu-section ul {
-  list-style: none;
-  padding: 0;
-}
-.menu-section ul li {
-  font-size: 1.3rem;
-  color: #6C757D;
-  padding: 0.6rem 0;
-  cursor: pointer;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-}
-.menu-section ul li:hover {
-  color: #007BFF;
-  padding-left: 0.5rem;
-}
-
-.menu-footer {
-  width: 100%;
-  max-width: 1400px;
-  padding: 8rem 2rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  text-align: center;
-  font-size: 1.2rem;
-  color: #6C757D;
-  margin-top: auto;
+  .mega-menu-content .megamenu-grid {
+    padding: 2.5rem 1.5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 3.2rem;
+  }
+  .mega-menu-content .col-title {
+    color: #1A1A1A;
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin-bottom: 2.5rem;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 1rem;
+  }
+  .mega-menu-content .mobile-pill-title {
+    background: linear-gradient(145deg, rgba(0, 123, 255, 0.18) 0%, rgba(0, 123, 255, 0.05) 100%);
+    border: 1px solid rgba(0, 123, 255, 0.25);
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1.2rem;
+    color: #1A1A1A;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 800;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .mega-menu-content .mobile-pill-title::before {
+    content: "";
+    width: 5px;
+    height: 18px;
+    background: #007BFF;
+    margin-right: 15px;
+    border-radius: 2px;
+  }
+  .mega-menu-content .is-pill {
+    list-style: none;
+    margin-bottom: 0.8rem;
+    background: rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .mega-menu-content .is-pill a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    padding: 1rem 1.2rem;
+    text-decoration: none;
+  }
+  .mega-menu-content .is-pill a .icon-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 36px;
+    height: 36px;
+    background: rgba(0, 123, 255, 0.1);
+    border-radius: 8px;
+    margin-right: 1rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+  }
+  .mega-menu-content .is-pill a .icon-wrapper svg {
+    width: 18px;
+    height: 18px;
+    stroke: #007BFF;
+  }
+  .mega-menu-content .is-pill a .link-text {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #1A1A1A;
+  }
+  .mega-menu-content .is-pill a .arrow {
+    display: inline-block;
+    color: #007BFF;
+    font-size: 1.2rem;
+    font-weight: bold;
+    opacity: 0.6;
+  }
 }
 
 .hero-fs {

@@ -1,8 +1,9 @@
 // 1. ABSTRACTS (Configuration)
 @use 'abstracts/index' as *;
 
-// 2. BASE (Reset)
+// 2. BASE (Reset & Thème)
 @use 'base/reset';
+@use 'base/theme'; // <--- AJOUT INDISPENSABLE ICI
 
 // 3. LAYOUT (Structure)
 @use 'layout/layout';
@@ -22,4 +23,3 @@
 // 5. PAGES
 @use 'pages/ux-journey';
 @use 'pages/ux-persona';
-

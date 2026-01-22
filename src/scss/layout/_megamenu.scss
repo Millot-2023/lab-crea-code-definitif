@@ -11,11 +11,12 @@
     width: 100vw;
     z-index: 999999;
 
-    &.is-active {
-        display: flex !important; // Force l'apparition quand le JS s'active
+    // Double sécurité pour la classe active (avec et sans "is-")
+    &.active, &.is-active {
+        display: flex !important; 
     }
 
-    /* --- RAIL DESKTOP 1400px (SANCTUARISÉ) --- */
+    /* --- RAIL DESKTOP 1400px --- */
     @media (min-width: 1025px) {
         top: v.$h-header;
         background-color: v.$color-bg-surface;
@@ -62,7 +63,7 @@
     @media (max-width: 1024px) {
         top: v.$h-header;
         height: calc(100vh - #{v.$h-header});
-        background-color: #050505;
+        background-color: v.$color-bg-surface; // Adaptable au thème (blanc en clair, noir en sombre via le body)
         overflow-y: auto;
         flex-direction: column;
 
@@ -74,12 +75,12 @@
         }
 
         .col-title {
-            color: #ffffff;
-            font-size: 2.4rem;
+            color: v.$color-text-main;
+            font-size: 1.8rem; // Ajusté pour éviter les icônes énormes
             font-weight: 900;
             margin-bottom: 2.5rem;
             display: block;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(0,0,0,0.1);
             padding-bottom: 1rem;
         }
 
@@ -87,15 +88,16 @@
             background: linear-gradient(145deg, rgba(v.$color-accent, 0.18) 0%, rgba(v.$color-accent, 0.05) 100%);
             border: 1px solid rgba(v.$color-accent, 0.25);
             border-radius: 12px;
-            padding: 1.4rem 1.5rem;
+            padding: 1rem 1.2rem;
             margin-bottom: 1.2rem;
-            color: #ffffff;
-            font-size: 1.3rem;
+            color: v.$color-text-main;
+            font-size: 1.1rem;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             font-weight: 800;
             display: flex;
             align-items: center;
+
             &::before {
                 content: '';
                 width: 5px;
@@ -109,8 +111,8 @@
         .is-pill {
             list-style: none;
             margin-bottom: 0.8rem;
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(0,0,0,0.03); // Fond léger en mode clair
+            border: 1px solid rgba(0,0,0,0.05);
             border-radius: 14px;
             overflow: hidden;
 
@@ -118,38 +120,37 @@
                 display: flex;
                 align-items: center;
                 width: 100%;
-                padding: 1.3rem 1.5rem;
+                padding: 1rem 1.2rem;
                 text-decoration: none;
 
                 .icon-wrapper {
                     display: flex;
-                    width: 42px;
-                    height: 42px;
-                    background: rgba(v.$color-accent, 0.12);
-                    border-radius: 10px;
-                    margin-right: 1.5rem;
+                    width: 36px;
+                    height: 36px;
+                    background: rgba(v.$color-accent, 0.1);
+                    border-radius: 8px;
+                    margin-right: 1rem;
                     align-items: center;
                     justify-content: center;
                     flex-shrink: 0;
-                    svg { width: 22px; height: 22px; stroke: v.$color-accent; }
+                    svg { width: 18px; height: 18px; stroke: v.$color-accent; }
                 }
 
                 .link-text {
                     flex-grow: 1;
-                    font-size: 1.6rem;
+                    font-size: 1.2rem;
                     font-weight: 500;
-                    color: rgba(255, 255, 255, 0.95);
+                    color: v.$color-text-main;
                 }
 
                 .arrow {
                     display: inline-block;
                     color: v.$color-accent;
-                    font-size: 1.4rem;
+                    font-size: 1.2rem;
                     font-weight: bold;
                     opacity: 0.6;
                 }
             }
-            &:active { background: rgba(v.$color-accent, 0.15); }
         }
     }
 }

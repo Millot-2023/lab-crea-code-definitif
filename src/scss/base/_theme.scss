@@ -1,0 +1,74 @@
+@use '../abstracts/index' as v;
+
+/* ==========================================================================
+   LOGIQUE DE SWITCH & COULEURS DARK MODE
+   ========================================================================== */
+
+// 1. ÉTAT INITIAL (MODE CLAIR)
+// Les icônes sont gérées ici pour éviter les flashs visuels
+.theme-btn {
+    .sun-icon { display: none !important; }
+    .moon-icon { display: block !important; }
+}
+
+// 2. ÉTAT DARK THEME (Activé par le JS sur le body)
+body.dark-theme {
+    background-color: #050505 !important;
+    color: #ffffff !important;
+
+    // Inversion des icônes : On cache la lune, on montre le soleil
+    .theme-btn {
+        .sun-icon { display: block !important; }
+        .moon-icon { display: none !important; }
+    }
+
+    // --- CORRECTIF BURGER INVISIBLE ---
+    .burger-btn {
+        .burger-line {
+            background-color: #ffffff !important;
+        }
+    }
+
+    // Header en mode sombre
+    header.main-header {
+        background-color: #0a0a0b !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+
+        .logo { color: #ffffff !important; }
+        
+        .action-btn, .theme-btn {
+            color: #ffffff !important;
+            background: rgba(255, 255, 255, 0.05);
+            svg { stroke: #ffffff !important; }
+        }
+    }
+
+    // Mega Menu en mode sombre
+    .mega-menu-content {
+        background-color: #0a0a0b !important;
+        
+        .col-title, .mobile-pill-title, .link-text {
+            color: #ffffff !important;
+        }
+
+        .is-pill {
+            background: rgba(255, 255, 255, 0.05) !important;
+            border-color: rgba(255, 255, 255, 0.1) !important;
+            
+            a {
+                color: #ffffff !important;
+                
+                .icon-wrapper {
+                    background: rgba(255, 255, 255, 0.05) !important;
+                    svg { 
+                        stroke: #ffffff !important; // Force les icônes du menu en blanc
+                    }
+                }
+                
+                .arrow {
+                    color: #ffffff !important;
+                }
+            }
+        }
+    }
+}
