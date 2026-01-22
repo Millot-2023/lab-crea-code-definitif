@@ -1,42 +1,52 @@
-<div class="persona-wrapper">
-    <article class="persona-card">
-        <div class="persona-sidebar">
-            <div class="persona-avatar">
-                <div class="avatar-fallback">UX</div>
-            </div>
-            <div class="persona-bio">
-                <h3>Bio & Profil</h3>
-                <p>34 ans, Freelance en design. Habite en milieu urbain. Utilise principalement son mobile pour la veille technologique.</p>
-            </div>
+<?php
+/**
+ * FICHIER : main-persona1.php
+ * VERSION : Desktop Allongée
+ */
+?>
+<article class="persona-card">
+    <aside class="persona-sidebar">
+        <div class="persona-avatar">
+            <span>UX</span>
+        </div>
+        
+        <div class="persona-identity">
+            <h3 class="sidebar-label">BIO & PROFIL</h3>
+            <p class="sidebar-desc">
+                34 ans, Freelance en design. Habite en milieu urbain. 
+                Passionné par l'optimisation des flux de travail.
+            </p>
+        </div>
+    </aside>
+
+    <div class="persona-main">
+        <header class="persona-header">
+            <h2 class="persona-name">Persona 3</h2>
+            <span class="persona-archetype">ARCHÉTYPE : EXPERT PRAGMATIQUE</span>
+        </header>
+
+        <div class="persona-grid">
+            <section class="persona-col">
+                <h4 class="col-title">Objectifs & Motivations</h4>
+                <ul class="persona-list list-check">
+                    <li>Trouver des solutions robustes.</li>
+                    <li>Automatiser les tâches répétitives.</li>
+                    <li>Accéder vite à l'essentiel.</li>
+                </ul>
+            </section>
+
+            <section class="persona-col">
+                <h4 class="col-title">Frustrations</h4>
+                <ul class="persona-list list-cross">
+                    <li>Documentations obsolètes.</li>
+                    <li>Interfaces sans raccourcis.</li>
+                </ul>
+            </section>
         </div>
 
-        <div class="persona-content">
-            <div class="persona-header-main">
-                <h2>"Le Technophile Pressé"</h2>
-                <span class="persona-archetype">Archétype : Expert Pragmatique</span>
-            </div>
-
-            <div class="persona-grid">
-                <div class="persona-column">
-                    <h4>Objectifs & Motivations</h4>
-                    <ul class="persona-list">
-                        <li>Trouver des solutions robustes.</li>
-                        <li>Automatiser les tâches.</li>
-                    </ul>
-                </div>
-                <div class="persona-column">
-                    <h4>Frustrations</h4>
-                    <ul class="persona-list list-red">
-                        <li>Docs obsolètes.</li>
-                        <li>Interfaces lourdes.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="persona-footer-main">
-                <h4>Mantra</h4>
-                <p>"Si ça prend plus de 3 clics, c'est que le design a échoué."</p>
-            </div>
-        </div>
-    </article>
-</div>
+        <footer class="persona-footer">
+            <h4 class="mantra-label">MANTRA</h4>
+            <p class="mantra-text">"Si ça prend plus de trois clics, c'est que le design a échoué."</p>
+        </footer>
+    </div>
+</article>

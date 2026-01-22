@@ -1,5 +1,5 @@
 <header class="main-header">
-    <div class="container header-flex">
+    <div class="header-full-width header-flex">
         
         <div class="logo-group">
             <a href="index.php" class="logo">CMILLOT</a>
@@ -69,8 +69,8 @@
                             <div class="menu-section">
                                 <h3>Analyse & UX</h3>
                                 <ul>
-                                    <li><a href="ux-persona.php" style="color: #27ae60; font-weight: 600;">Études Personas<span style="font-size: 10px; margin-left: 5px;">✔</span></a></li><!--OK-->
-                                    <li><a href="ux-journey.php" style="color: #27ae60; font-weight: 600;">Ux Journey<span style="font-size: 10px; margin-left: 5px;">✔</span></a></li><!--OK-->
+                                    <li><a href="ux-persona.php" style="color: #27ae60; font-weight: 600;">Études Personas<span style="font-size: 10px; margin-left: 5px;">✔</span></a></li>
+                                    <li><a href="ux-journey.php" style="color: #27ae60; font-weight: 600;">Ux Journey<span style="font-size: 10px; margin-left: 5px;">✔</span></a></li>
                                     <li><a href="index.php?page=audit">Audits Ergonomiques</a></li>
                                 </ul>
                             </div>
@@ -126,3 +126,23 @@
         </nav>
     </div>
 </header>
+
+<style>
+/* Style spécifique pour libérer le header du rail central */
+.header-full-width {
+    width: 100%;
+    /* On laisse une marge de sécurité de 40px à gauche et à droite */
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: none !important; /* Force la sortie du mode container */
+}
+
+/* En desktop XL, on peut même élargir encore plus si besoin */
+@media (min-width: 1600px) {
+    .header-full-width {
+        padding: 0 60px;
+    }
+}
+</style>
