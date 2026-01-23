@@ -1,20 +1,22 @@
 <?php
 /**
  * FICHIER : main-persona1.php
- * VERSION : Desktop Allongée
+ * VERSION : Structure HTML Pure - Persona 1
  */
 ?>
 <article class="persona-card">
     <aside class="persona-sidebar">
-        <div class="persona-avatar">
-            <span>UX</span>
+        <div class="persona-photo-container">
+            <img src="assets/img/persona-01.jpg" alt="Photo Persona 1" class="persona-img-fixed">
         </div>
         
         <div class="persona-identity">
             <h3 class="sidebar-label">BIO & PROFIL</h3>
             <p class="sidebar-desc">
-                34 ans, Freelance en design. Habite en milieu urbain. 
-                Passionné par l'optimisation des flux de travail.
+                <p>34 ans</p>
+                <p> Freelance en design.</p>
+                <p>Habite en milieu urbain.</p>
+                <p>Passionné par l'optimisation des flux de travail.</p>
             </p>
         </div>
     </aside>
@@ -50,3 +52,4 @@
         </footer>
     </div>
 </article>
+

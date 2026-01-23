@@ -1,3 +1,10 @@
+<?php
+/**
+ * COMPOSANT : HEADER
+ * Fichier : includes/header.php
+ * Rôle : Navigation principale avec Mega-Menu (Structure CMILLOT)
+ */
+?>
 <header class="main-header">
     <div class="header-full-width header-flex">
         
@@ -79,8 +86,8 @@
                             <div class="menu-section">
                                 <h3 class="mobile-pill-title">Analyse & UX</h3>
                                 <ul>
-                                    <li class="is-pill active"><a href="ux-persona.php"><div class="icon-wrapper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg></div><span class="link-text">Études Personas</span><span class="arrow">→</span></a></li>
-                                    <li class="is-pill active"><a href="ux-journey.php"><div class="icon-wrapper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg></div><span class="link-text">Ux Journey</span><span class="arrow">→</span></a></li>
+                                    <li class="is-pill"><a href="ux-persona.php"><div class="icon-wrapper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg></div><span class="link-text">Études Personas</span><span class="arrow">→</span></a></li>
+                                    <li class="is-pill"><a href="ux-journey.php"><div class="icon-wrapper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg></div><span class="link-text">Ux Journey</span><span class="arrow">→</span></a></li>
                                     <li class="is-pill"><a href="index.php?page=audit"><div class="icon-wrapper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div><span class="link-text">Audits Ergo</span><span class="arrow">→</span></a></li>
                                 </ul>
                             </div>
@@ -106,9 +113,11 @@
                             <span class="col-title">Ressources</span>
                             
                             <div class="menu-section">
-                                <h3 class="mobile-pill-title">Outils UX</h3>
+                                <h3 class="mobile-pill-title">Laboratoire Tools</h3>
                                 <ul>
-                                    <li class="is-pill"><a href="ux-tools.php"><div class="icon-wrapper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><path d="M9 3v18M15 3v18M3 9h18M3 15h18"></path></svg></div><span class="link-text">Laboratoire Tools</span><span class="arrow">→</span></a></li>
+                                    <li class="is-pill"><a href="ux-tools.php"><div class="icon-wrapper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><path d="M9 3v18M15 3v18M3 9h18M3 15h18"></path></svg></div><span class="link-text">UX Tools</span><span class="arrow">→</span></a></li>
+                                    <li class="is-pill"><a href="unit-master.php"><div class="icon-wrapper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></div><span class="link-text">Unit-Master</span><span class="arrow">→</span></a></li>
+                                    <li class="is-pill"><a href="stress-tester.php"><div class="icon-wrapper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg></div><span class="link-text">Stress-Tester</span><span class="arrow">→</span></a></li>
                                 </ul>
                             </div>
 
