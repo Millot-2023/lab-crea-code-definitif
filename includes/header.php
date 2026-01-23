@@ -124,7 +124,7 @@
                             <div class="menu-section">
                                 <h3 class="mobile-pill-title">Composants</h3>
                                 <ul>
-                                    <li class="is-pill active"><a href="index.php?page=css"><div class="icon-wrapper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2" ry="2"></rect><line x1="2" y1="12" x2="22" y2="12"></line><line x1="12" y1="2" x2="12" y2="22"></line></svg></div><span class="link-text">Cards</span><span class="arrow">→</span></a></li>
+                                    <li class="is-pill active"><a href="index.php?page=css"><div class="icon-wrapper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2" ry="2"></rect><line x1="2" y1="12" x2="22" y2="12"></line><line x1="12" y1="2" x2="12" y2="22"></line></svg></div><span class="link-text">CSS</span><span class="arrow">→</span></a></li>
                                     <li class="is-pill"><a href="index.php?page=buttons"><div class="icon-wrapper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></div><span class="link-text">Boutons</span><span class="arrow">→</span></a></li>
                                 </ul>
                             </div>

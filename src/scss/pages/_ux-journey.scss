@@ -1,10 +1,12 @@
 @use '../abstracts/index' as *;
 
 /* ==========================================================================
-   PAGE : UX JOURNEY - STYLES FORCÉS
+   PAGE : UX JOURNEY - TIMELINE PRÉCISE SANS DÉBORDEMENT
+   Fichier : src/scss/pages/_ux-journey.scss
    ========================================================================== */
 
-// On cible directement la classe des onglets sans parent imposé
+// --- Navigation par onglets ---
+
 .journey-tabs {
     display: flex;
     justify-content: center;
@@ -16,13 +18,13 @@
         display: inline-flex;
         align-items: center;
         padding: 12px 24px;
-        border: 2px solid #ddd !important; // Bordure forcée
+        border: 2px solid #ddd !important;
         background-color: #ffffff !important;
         color: #333333 !important;
-        text-decoration: none;
         font-weight: 600;
         border-radius: 5px;
         transition: all 0.3s ease;
+        cursor: pointer;
 
         &:hover {
             border-color: #4834d4 !important;
@@ -38,9 +40,189 @@
     }
 }
 
-// Style de la zone de contenu
+// --- Zone d'affichage ---
+
 .journey-display-area {
     background: #fff;
-    padding: 20px;
+    padding: 40px;
     border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.journey-tab-content {
+    display: none;
+    &.active { display: block; }
+}
+
+// --- En-tête ---
+
+.userJourney-header {
+    margin-bottom: 50px;
+    text-align: left;
+    h2 { font-size: 1.8rem; color: #1a1a1a; margin-bottom: 10px; }
+    p { color: #666; font-style: italic; font-size: 1.1rem; }
+}
+
+// --- Structure de la Timeline ---
+
+.userJourney-timeline {
+    position: relative;
+    padding-left: 100px;
+    margin-top: 30px;
+
+    // La ligne verticale est de nouveau ici mais avec un masquage intelligent
+    &::before {
+        content: '';
+        position: absolute;
+        left: 39px; // (80px / 2) - (2px / 2)
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: #333;
+        z-index: 1;
+    }
+}
+
+// --- Étapes individuelles (Logique de masquage du trait qui dépasse) ---
+
+/* ==========================================================================
+   STRUCTURE DES ÉTAPES INDIVIDUELLES
+   ========================================================================== */
+
+.userJourney-step {
+    position: relative;
+    margin-bottom: 40px; // Espace vertical entre deux blocs
+    display: flex;
+    align-items: center; // Aligne verticalement le rond (marker) et la case (content)
+    gap: 20px;
+
+    // Supprime la marge sous le tout dernier bloc du parcours
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    /* ASTUCE "ANTI-DÉBORDEMENT" HAUT :
+       On crée un rectangle blanc qui se place PAR-DESSUS la ligne de la timeline
+       uniquement pour le premier bloc, afin de cacher le trait qui dépasse au-dessus du rond 01.
+    */
+    &:first-child::after {
+        content: '';
+        position: absolute;
+        left: -100px;         // Positionné exactement sur la trajectoire de la ligne
+        top: -10px;           // Déborde un peu en haut par sécurité
+        width: 80px;          // Largeur suffisante pour couvrir le trait
+        height: calc(50% + 10px); // Couvre précisément de tout en haut jusqu'au milieu du bloc
+        background: #fff;     // Masque de la couleur du fond
+        z-index: 1;           // Sous le rond (z-index 2) mais sur la ligne
+    }
+
+    /* ASTUCE "ANTI-DÉBORDEMENT" BAS :
+       Même principe que pour le premier, mais pour le dernier bloc :
+       on cache la ligne qui part du milieu du dernier rond vers le bas.
+    */
+    &:last-child::after {
+        content: '';
+        position: absolute;
+        left: -100px;
+        top: 50%;             // Démarre au milieu du bloc
+        width: 80px;
+        height: calc(50% + 10px); // Couvre de la moitié jusqu'en bas
+        background: #fff;
+        z-index: 1;
+    }
+
+    /* LE ROND NUMÉROTÉ */
+    .step-marker {
+        flex-shrink: 0;       // Empêche le rond de se déformer si le texte est long
+        width: 80px;
+        height: 80px;
+        margin-left: -100px;  // Sort le rond de la case pour le placer sur la timeline
+        background: #fff;
+        border: 2px solid #333;
+        border-radius: 50%;   // Cercle parfait
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.6rem;
+        font-weight: 700;
+        z-index: 2;           // Priorité haute pour être visible au-dessus des masques blancs
+        color: #333;
+        position: relative;
+    }
+
+    /* LA CASE DE CONTENU (ENCADRÉ NOIR) */
+    .step-content {
+        flex: 1;              // Prend toute la largeur restante
+        padding: 25px;
+
+        position: relative;
+        border-radius:10px;
+
+        background: red;        
+        border-color: red;
+
+        /* LE CONNECTEUR HORIZONTAL :
+           Le petit trait qui relie physiquement la case au rond.
+        */
+        &::before {
+            content: '';
+            position: absolute;
+            left: -22px;      // Positionné entre la case et le rond
+            top: 50%;         // Centré verticalement par rapport à la case
+            transform: translateY(-50%); // Ajustement précis du centrage
+            width: 20px;
+            height: 2px;
+            background: #333;
+        }
+        
+        /* Libellé de la phase (ex: Phase de Découverte) */
+        .step-phase {
+            display: block;
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: white;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        /* Titre et Paragraphe */
+        h4 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: #000;
+            font-weight: 700; }
+        
+        p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+            color: white; }
+
+        /* Pied de case (Mood & Touchpoint) */
+        .step-meta {
+            display: flex;
+            /*justify-content: center;*/
+            gap: 25px;
+            font-size: 0.95rem;
+            border-top: 1px solid #eee; // Séparateur discret
+            padding-top: 15px;
+
+            span {
+                display: flex;
+                /*align-items: center;*/
+                gap: 8px;
+              
+            }
+        }
+
+    .mood {
+        font-size: 3rem; // On grossit le smiley ici
+        line-height: 1;
+        }
+
+    .touchpoint {
+        font-size: 3rem; // On grossit le smiley ici
+        line-height: 1;
+        }
+}
 }

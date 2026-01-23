@@ -5,6 +5,7 @@
     </header>
 
     <div class="userJourney-timeline">
+<!--01-->
         <article class="userJourney-step">
             <div class="step-marker">01</div>
             <div class="step-content">
@@ -13,11 +14,11 @@
                 <p>L'utilisateur cherche intuitivement le bouton "Nouveau Projet".</p>
                 <div class="step-meta">
                     <span class="mood">😊 Confiant</span>
-                    <span class="touchpoint">💻 Desktop App</span>
+                    <!--<span class="touchpoint">💻 Desktop App</span>-->
                 </div>
             </div>
         </article>
-
+<!--02-->
         <article class="userJourney-step">
             <div class="step-marker">02</div>
             <div class="step-content">
@@ -26,11 +27,11 @@
                 <p>Saisie des variables d'environnement et choix du dépôt Git.</p>
                 <div class="step-meta">
                     <span class="mood">😐 Concentré</span>
-                    <span class="touchpoint">⚙️ Formulaire</span>
+                    <!--<span class="touchpoint">⚙️ Formulaire</span>-->
                 </div>
             </div>
         </article>
-
+<!--03-->
         <article class="userJourney-step">
             <div class="step-marker">03</div>
             <div class="step-content">
@@ -39,9 +40,139 @@
                 <p>L'attente sans indicateur de progression crée de l'incertitude.</p>
                 <div class="step-meta">
                     <span class="mood">😟 Anxieux</span>
-                    <span class="touchpoint">⏳ Loader</span>
+                    <!--<span class="touchpoint">⏳ Loader</span>-->
+                </div>
+            </div>
+        </article>
+<!--04-->
+        <article class="userJourney-step">
+            <div class="step-marker">04</div>
+            <div class="step-content">
+                <span class="step-phase">Point de Friction</span>
+                <h4>Validation du Build</h4>
+                <p>L'attente sans indicateur de progression crée de l'incertitude.</p>
+                <div class="step-meta">
+                    <span class="mood">😟 Anxieux</span>
+                    <!--<span class="touchpoint">⏳ Loader</span>-->
+                </div>
+            </div>
+        </article>
+<!--05-->
+        <article class="userJourney-step">
+            <div class="step-marker">05</div>
+            <div class="step-content">
+                <span class="step-phase">Point de Friction</span>
+                <h4>Validation du Build</h4>
+                <p>L'attente sans indicateur de progression crée de l'incertitude.</p>
+                <div class="step-meta">
+                    <span class="mood">😟 Anxieux</span>
+                    <!--<span class="touchpoint">⏳ Loader</span>-->
+                </div>
+            </div>
+        </article>
+<!--06-->
+        <article class="userJourney-step">
+            <div class="step-marker">06</div>
+            <div class="step-content">
+                <span class="step-phase">Point de Friction</span>
+                <h4>Validation du Build</h4>
+                <p>L'attente sans indicateur de progression crée de l'incertitude.</p>
+                <div class="step-meta">
+                    <span class="mood">😟 Anxieux</span>
+                    <!--<span class="touchpoint">⏳ Loader</span>-->
+                </div>
+            </div>
+        </article>
+<!--07-->
+        <article class="userJourney-step">
+            <div class="step-marker">07</div>
+            <div class="step-content">
+                <span class="step-phase">Point de Friction</span>
+                <h4>Validation du Build</h4>
+                <p>L'attente sans indicateur de progression crée de l'incertitude.</p>
+                <div class="step-meta">
+                    <span class="mood">😟 Anxieux</span>
+                    <!--<span class="touchpoint">⏳ Loader</span>-->
+                </div>
+            </div>
+        </article>
+
+<!--08-->
+        <article class="userJourney-step">
+            <div class="step-marker">08</div>
+            <div class="step-content">
+                <span class="step-phase">Point de Friction</span>
+                <h4>Validation du Build</h4>
+                <p>L'attente sans indicateur de progression crée de l'incertitude.</p>
+                <div class="step-meta">
+                    <span class="mood">😟 Anxieux</span>
+                    <!--<span class="touchpoint">⏳ Loader</span>-->
+                </div>
+            </div>
+        </article>
+
+<!--09-->
+        <article class="userJourney-step">
+            <div class="step-marker">09</div>
+            <div class="step-content">
+                <span class="step-phase">Point de Friction</span>
+                <h4>Validation du Build</h4>
+                <p>L'attente sans indicateur de progression crée de l'incertitude.</p>
+                <div class="step-meta">
+                    <span class="mood">😟 Anxieux</span>
+                    <!--<span class="touchpoint">⏳ Loader</span>-->
+                </div>
+            </div>
+        </article>
+<!--10-->
+        <article class="userJourney-step">
+            <div class="step-marker">10</div>
+            <div class="step-content">
+                <span class="step-phase">Point de Friction</span>
+                <h4>Validation du Build</h4>
+                <p>L'attente sans indicateur de progression crée de l'incertitude.</p>
+                <div class="step-meta">
+                    <span class="mood">😟 Anxieux</span>
+                    <!--<span class="touchpoint">⏳ Loader</span>-->
+                </div>
+            </div>
+        </article>
+
+
+<!--11-->
+        <article class="userJourney-step">
+            <div class="step-marker">11</div>
+            <div class="step-content">
+                <span class="step-phase">Point de Friction</span>
+                <h4>Validation du Build</h4>
+                <p>L'attente sans indicateur de progression crée de l'incertitude.</p>
+                <div class="step-meta">
+                    <span class="mood">😟 Anxieux</span>
+                    <!--<span class="touchpoint">⏳ Loader</span>-->
+                </div>
+            </div>
+        </article>
+
+<!--12-->
+        <article class="userJourney-step">
+            <div class="step-marker">12</div>
+            <div class="step-content">
+                <span class="step-phase">Point de Friction</span>
+                <h4>Validation du Build</h4>
+                <p>L'attente sans indicateur de progression crée de l'incertitude.</p>
+                <div class="step-meta">
+                    <span class="mood">😟 Anxieux</span>
+                    <!--<span class="touchpoint">⏳ Loader</span>-->
                 </div>
             </div>
         </article>
     </div>
+
+
+
+
+
+
+
+
 </div>
