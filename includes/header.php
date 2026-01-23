@@ -106,6 +106,13 @@
                             <span class="col-title">Ressources</span>
                             
                             <div class="menu-section">
+                                <h3 class="mobile-pill-title">Outils UX</h3>
+                                <ul>
+                                    <li class="is-pill"><a href="ux-tools.php"><div class="icon-wrapper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><path d="M9 3v18M15 3v18M3 9h18M3 15h18"></path></svg></div><span class="link-text">Laboratoire Tools</span><span class="arrow">→</span></a></li>
+                                </ul>
+                            </div>
+
+                            <div class="menu-section">
                                 <h3 class="mobile-pill-title">Composants</h3>
                                 <ul>
                                     <li class="is-pill active"><a href="index.php?page=css"><div class="icon-wrapper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2" ry="2"></rect><line x1="2" y1="12" x2="22" y2="12"></line><line x1="12" y1="2" x2="12" y2="22"></line></svg></div><span class="link-text">Cards</span><span class="arrow">→</span></a></li>
