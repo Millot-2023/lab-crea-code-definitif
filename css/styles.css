@@ -62,6 +62,10 @@ button {
 body.dark-theme {
   background-color: #050505 !important;
   color: #ffffff !important;
+  /* ----------------------------------------------------------------------
+     CORRECTIF AUTONOMIE : UX-PERSONA CARD
+     On empêche le texte de devenir blanc dans cette zone car le fond reste blanc.
+     ---------------------------------------------------------------------- */
 }
 body.dark-theme .theme-btn .sun-icon {
   display: block !important;
@@ -107,6 +111,19 @@ body.dark-theme .mega-menu-content .is-pill a .icon-wrapper svg {
 }
 body.dark-theme .mega-menu-content .is-pill a .arrow {
   color: #ffffff !important;
+}
+body.dark-theme.ux-page-persona .persona-card {
+  background-color: #ffffff !important;
+  border-color: #eee !important;
+}
+body.dark-theme.ux-page-persona .persona-card .persona-main {
+  background-color: #ffffff !important;
+}
+body.dark-theme.ux-page-persona .persona-card .persona-main h1, body.dark-theme.ux-page-persona .persona-card .persona-main h2, body.dark-theme.ux-page-persona .persona-card .persona-main h3, body.dark-theme.ux-page-persona .persona-card .persona-main h4, body.dark-theme.ux-page-persona .persona-card .persona-main p, body.dark-theme.ux-page-persona .persona-card .persona-main li, body.dark-theme.ux-page-persona .persona-card .persona-main span, body.dark-theme.ux-page-persona .persona-card .persona-main strong, body.dark-theme.ux-page-persona .persona-card .persona-main div, body.dark-theme.ux-page-persona .persona-card .persona-main b {
+  color: #2c3e50 !important;
+}
+body.dark-theme.ux-page-persona .persona-card .journey-toolbar .btn-tool {
+  color: #333 !important;
 }
 
 /* ==========================================================================

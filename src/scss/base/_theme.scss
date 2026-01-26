@@ -5,7 +5,6 @@
    ========================================================================== */
 
 // 1. ÉTAT INITIAL (MODE CLAIR)
-// Les icônes sont gérées ici pour éviter les flashs visuels
 .theme-btn {
     .sun-icon { display: none !important; }
     .moon-icon { display: block !important; }
@@ -16,13 +15,13 @@ body.dark-theme {
     background-color: #050505 !important;
     color: #ffffff !important;
 
-    // Inversion des icônes : On cache la lune, on montre le soleil
+    // Inversion des icônes
     .theme-btn {
         .sun-icon { display: block !important; }
         .moon-icon { display: none !important; }
     }
 
-    // --- CORRECTIF BURGER INVISIBLE ---
+    // Correctif Burger
     .burger-btn {
         .burger-line {
             background-color: #ffffff !important;
@@ -57,16 +56,38 @@ body.dark-theme {
             
             a {
                 color: #ffffff !important;
-                
                 .icon-wrapper {
                     background: rgba(255, 255, 255, 0.05) !important;
-                    svg { 
-                        stroke: #ffffff !important; // Force les icônes du menu en blanc
-                    }
+                    svg { stroke: #ffffff !important; }
                 }
+                .arrow { color: #ffffff !important; }
+            }
+        }
+    }
+
+    /* ----------------------------------------------------------------------
+       CORRECTIF AUTONOMIE : UX-PERSONA CARD
+       On empêche le texte de devenir blanc dans cette zone car le fond reste blanc.
+       ---------------------------------------------------------------------- */
+    &.ux-page-persona {
+        .persona-card {
+            background-color: #ffffff !important; // La carte reste blanche
+            border-color: #eee !important;
+
+            .persona-main {
+                background-color: #ffffff !important; // Le fond reste blanc
                 
-                .arrow {
-                    color: #ffffff !important;
+                // ON FORCE LE TEXTE A RESTER NOIR/SOMBRE
+                // Pour annuler le "color: #ffffff" du body.dark-theme
+                h1, h2, h3, h4, p, li, span, strong, div, b {
+                    color: #2c3e50 !important; 
+                }
+            }
+            
+            // On s'assure que la toolbar de copie reste aussi lisible (noir sur blanc)
+            .journey-toolbar {
+                .btn-tool {
+                    color: #333 !important;
                 }
             }
         }
