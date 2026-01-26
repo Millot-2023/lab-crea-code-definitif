@@ -19,6 +19,7 @@ html {
 body {
   font-family: sans-serif;
   font-size: 1.6rem;
+  font-weight: 400;
   background-color: #F8F9FA;
   color: #1A1A1A;
   line-height: 1.5;
@@ -1253,9 +1254,13 @@ body.dark-theme .mega-menu-content .is-pill a .arrow {
 .persona-card .persona-main .persona-list.list-check li::before {
   content: "✓";
   position: absolute;
+<<<<<<< Updated upstream
   left: 0;
   color: #2ecc71;
   font-weight: bold;
+=======
+  left: 0; /*font-weight: bold;*/
+>>>>>>> Stashed changes
 }
 .persona-card .persona-main .persona-list.list-cross li::before {
   content: "✕";

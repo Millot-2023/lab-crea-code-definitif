@@ -96,6 +96,10 @@
                                 <h3 class="mobile-pill-title">Interface UI</h3>
                                 <ul>
                                     <li class="is-pill"><a href="index.php?page=hifi-maquettes"><div class="icon-wrapper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line></svg></div><span class="link-text">Maquettes Hifi</span><span class="arrow">→</span></a></li>
+
+                                    <li class="is-pill"><a href="ux-vierge.php?page=prototypes"><div class="icon-wrapper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></div><span class="link-text">UX-UI</span><span class="arrow">→</span></a></li>
+
+
                                     <li class="is-pill"><a href="index.php?page=prototypes"><div class="icon-wrapper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></div><span class="link-text">Prototypes</span><span class="arrow">→</span></a></li>
                                 </ul>
                             </div>

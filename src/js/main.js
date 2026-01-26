@@ -39,38 +39,32 @@
             }
         }
 
-        // --- GESTIONNAIRE DE COPIE CSS (ALPHA) ---
-        document.addEventListener('click', function(event) {
+        // --- GESTIONNAIRE DE COPIE CSS (MODERNE) ---
+        document.addEventListener('click', async function(event) {
             const btn = event.target.closest('.btn-copy');
             if (btn) {
                 event.preventDefault();
-                const codeToCopy = btn.getAttribute('data-code');
+                
+                // Utilisation de .dataset (Recommandé par Sonar)
+                const codeToCopy = btn.dataset.code;
                 
                 if (codeToCopy) {
-                    const textArea = document.createElement("textarea");
-                    textArea.value = codeToCopy;
-                    // On rend le textarea invisible
-                    textArea.style.position = "fixed";
-                    textArea.style.left = "-9999px";
-                    document.body.appendChild(textArea);
-                    textArea.select();
-                    
                     try {
-                        const successful = document.execCommand('copy');
-                        if (successful) {
-                            const originalHTML = btn.innerHTML;
-                            btn.innerHTML = '<i class="fas fa-check"></i> Copié !';
-                            btn.classList.add('copy-success');
-                            
-                            setTimeout(() => {
-                                btn.innerHTML = originalHTML;
-                                btn.classList.remove('copy-success');
-                            }, 2000);
-                        }
+                        // Utilisation de l'API Clipboard (Remplace execCommand déprécié)
+                        await navigator.clipboard.writeText(codeToCopy);
+                        
+                        const originalHTML = btn.innerHTML;
+                        btn.innerHTML = '<i class="fas fa-check"></i> Copié !';
+                        btn.classList.add('copy-success');
+                        
+                        setTimeout(() => {
+                            btn.innerHTML = originalHTML;
+                            btn.classList.remove('copy-success');
+                        }, 2000);
+                        
                     } catch (err) {
-                        console.error('Erreur de copie :', err);
+                        console.error('Erreur de copie avec Clipboard API :', err);
                     }
-                    document.body.removeChild(textArea);
                 }
             }
         });

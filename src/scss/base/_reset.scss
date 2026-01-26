@@ -18,6 +18,8 @@ body {
     // Utilise tes variables de couleurs et de texte
     font-family: sans-serif; 
     font-size: 1.6rem; // Équivalent 16px
+font-weight: 400;
+
     background-color: v.$color-bg-main;
     color: v.$color-text-main;
     line-height: 1.5;
