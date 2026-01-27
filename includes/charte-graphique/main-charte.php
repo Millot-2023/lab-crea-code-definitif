@@ -16,8 +16,10 @@
 
     <hr class="separator">
 
+
+    <h2 class="">01. Palette Chromatique</h2>
+    <p>Nom de la police</p>
     <div class="charte-block">
-        <h2 class="block-title">01. Palette Chromatique</h2>
         <div class="grid-layout">
             <div class="grid-item">
                 <div class="swatch" style="background-color: #2ecc71;"></div>
@@ -52,8 +54,9 @@
 
     <hr class="separator">
 
-    <div class="charte-block">
-        <h2 class="block-title">02. Système Typographique</h2>
+    <h2 class="">02. Système Typographique</h2>
+    <p>Nom de la police</p>
+   <div class="charte-block">
         <div class="typo-container">
             <div class="typo-row"><h1>Titre h1</h1></div>
             <div class="typo-row"><h2>Titre h2</h2></div>
@@ -66,8 +69,9 @@
 
     <hr class="separator">
 
+    <h2 class="">03. Iconographie & Style</h2>
+    <p>Nom de la police</p>
     <div class="charte-block">
-        <h2 class="block-title">03. Iconographie & Style</h2>
         <div class="grid-layout">
             <div class="grid-item">
                 <div class="icon-holder"><i data-lucide="layers"></i></div>

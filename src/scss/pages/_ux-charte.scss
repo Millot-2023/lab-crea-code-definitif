@@ -24,7 +24,7 @@
 
     .charte-block {
         margin-bottom: 80px;
-        text-align: center;
+        /*text-align: center;*/
         display: block;
         
         .block-title { 
@@ -42,8 +42,17 @@
         gap: 40px;
         justify-content: center;
         width: 100%;
-    }
 
+
+
+
+        margin-top:50px;
+    }
+    
+
+
+
+    
     /* ITEM (CENTRAGE VERTICAL ET HORIZONTAL) */
     .grid-item {
         width: 150px;
@@ -102,9 +111,9 @@
 
     /* TYPO */
     .typo-container {
-        text-align: left;
+        /*text-align: left;*/
         max-width: 800px;
-        margin: 0 auto;
+        /*margin: 0 auto;*/
         .typo-row { 
             border-bottom: 1px solid #eee; 
             padding: 20px 0; 

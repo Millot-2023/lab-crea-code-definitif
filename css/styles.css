@@ -1258,4 +1258,133 @@ body.dark-theme.ux-page-persona .persona-card .journey-toolbar .btn-tool {
 .btn-persona.active {
   background: #4834d4 !important;
   color: #fff !important;
+}
+
+/* ==========================================================================
+   PAGE : CHARTE GRAPHIQUE (_ux-charte.scss)
+   ========================================================================== */
+#charte-graphique-container.ux-page-charte {
+  display: block;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  /* GRILLE UNIFIÉE */
+  /* ITEM (CENTRAGE VERTICAL ET HORIZONTAL) */
+  /* COULEURS */
+  /* ICÔNES */
+  /* TEXTES SOUS LES ITEMS */
+  /* TYPO */
+}
+#charte-graphique-container.ux-page-charte .charte-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+#charte-graphique-container.ux-page-charte .charte-header h1 {
+  margin-bottom: 10px;
+}
+#charte-graphique-container.ux-page-charte .separator {
+  border: 0;
+  border-top: 1px solid #ddd;
+  margin: 50px 0;
+  display: block;
+}
+#charte-graphique-container.ux-page-charte .charte-block {
+  margin-bottom: 80px;
+  /*text-align: center;*/
+  display: block;
+}
+#charte-graphique-container.ux-page-charte .charte-block .block-title {
+  margin-bottom: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+#charte-graphique-container.ux-page-charte .grid-layout {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 40px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  margin-top: 50px;
+}
+#charte-graphique-container.ux-page-charte .grid-item {
+  width: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  text-align: center;
+}
+#charte-graphique-container.ux-page-charte .swatch {
+  width: 150px;
+  height: 150px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  -webkit-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+#charte-graphique-container.ux-page-charte .icon-holder {
+  width: 150px;
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 10px;
+}
+#charte-graphique-container.ux-page-charte .icon-holder svg {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  fill: none; /* Sécurité pour Lucide */
+}
+#charte-graphique-container.ux-page-charte .item-info {
+  width: 100%;
+}
+#charte-graphique-container.ux-page-charte .item-info .label-primary {
+  display: block;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+#charte-graphique-container.ux-page-charte .item-info .label-secondary {
+  display: block;
+  font-size: 0.85rem;
+  opacity: 0.6;
+  font-family: monospace;
+}
+#charte-graphique-container.ux-page-charte .typo-container {
+  /*text-align: left;*/
+  max-width: 800px;
+  /*margin: 0 auto;*/
+}
+#charte-graphique-container.ux-page-charte .typo-container .typo-row {
+  border-bottom: 1px solid #eee;
+  padding: 20px 0;
+}
+#charte-graphique-container.ux-page-charte .typo-container .typo-row h1, #charte-graphique-container.ux-page-charte .typo-container .typo-row h2, #charte-graphique-container.ux-page-charte .typo-container .typo-row h3, #charte-graphique-container.ux-page-charte .typo-container .typo-row h4, #charte-graphique-container.ux-page-charte .typo-container .typo-row h5, #charte-graphique-container.ux-page-charte .typo-container .typo-row p {
+  margin: 0;
 }/*# sourceMappingURL=styles.css.map */
