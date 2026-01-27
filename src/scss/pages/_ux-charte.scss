@@ -1,0 +1,114 @@
+/* ==========================================================================
+   PAGE : CHARTE GRAPHIQUE (_ux-charte.scss)
+   ========================================================================== */
+
+#charte-graphique-container.ux-page-charte {
+    display: block;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+
+    .charte-header { 
+        text-align: center; 
+        margin-bottom: 50px;
+        h1 { margin-bottom: 10px; }
+    }
+    
+    .separator { 
+        border: 0; 
+        border-top: 1px solid #ddd; 
+        margin: 50px 0; 
+        display: block;
+    }
+
+    .charte-block {
+        margin-bottom: 80px;
+        text-align: center;
+        display: block;
+        
+        .block-title { 
+            margin-bottom: 40px; 
+            font-weight: bold; 
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    }
+
+    /* GRILLE UNIFIÉE */
+    .grid-layout {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: center;
+        width: 100%;
+    }
+
+    /* ITEM (CENTRAGE VERTICAL ET HORIZONTAL) */
+    .grid-item {
+        width: 150px;
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        justify-content: flex-start;
+        text-align: center;
+    }
+
+    /* COULEURS */
+    .swatch {
+        width: 150px;
+        height: 150px;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    /* ICÔNES */
+    .icon-holder {
+        width: 150px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+
+        svg {
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            min-height: 40px;
+            stroke: currentColor;
+            stroke-width: 1.5;
+            fill: none; /* Sécurité pour Lucide */
+        }
+    }
+
+    /* TEXTES SOUS LES ITEMS */
+    .item-info {
+        width: 100%;
+        .label-primary { 
+            display: block; 
+            font-weight: bold; 
+            font-size: 1rem; 
+            margin-bottom: 4px;
+        }
+        .label-secondary { 
+            display: block; 
+            font-size: 0.85rem; 
+            opacity: 0.6; 
+            font-family: monospace; 
+        }
+    }
+
+    /* TYPO */
+    .typo-container {
+        text-align: left;
+        max-width: 800px;
+        margin: 0 auto;
+        .typo-row { 
+            border-bottom: 1px solid #eee; 
+            padding: 20px 0; 
+            h1, h2, h3, h4, h5, p { margin: 0; } 
+        }
+    }
+}

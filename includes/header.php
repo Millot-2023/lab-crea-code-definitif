@@ -58,17 +58,27 @@
                             <div class="menu-section">
                                 <h3 class="mobile-pill-title">Identité Visuelle</h3>
                                 <ul>
-                                    <li class="is-pill"><a href="index.php?page=logos">
-                                            <div class="icon-wrapper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <li class="is-pill active">
+                                        <a href="identite-visuelle.php">
+                                            <div class="icon-wrapper" style="color: #2ecc71 !important;">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                                     <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                                                </svg></div><span class="link-text">Logos Vectoriels</span><span class="arrow">→</span>
-                                        </a></li>
-                                    <li class="is-pill"><a href="index.php?page=charte">
-                                            <div class="icon-wrapper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                                                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                                                </svg></div><span class="link-text">Chartes Graphiques</span><span class="arrow">→</span>
-                                        </a></li>
+                                                </svg>
+                                            </div>
+                                            <span class="link-text" style="color: #2ecc71 !important;">Logos Vectoriels</span>
+                                            <span class="arrow">→</span>
+                                        </a>
+                                    </li>
+<!--PAGE CHARTE-->
+<li class="is-pill"><a href="ux-charte.php"><div class="icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+        </div>
+        <span class="link-text">Chartes Graphiques</span>
+        <span class="arrow">→</span></a></li>
+<!--PAGE CHARTE-->
                                     <li class="is-pill"><a href="index.php?page=brand">
                                             <div class="icon-wrapper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                                     <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
